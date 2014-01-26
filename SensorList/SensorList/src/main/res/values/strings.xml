@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SensorList</string>
+    <string name="sensor_name_label">Name:\t\t</string>
+	<string name="sensor_type_label">Type:\t\t</string>
+	<string name="sensor_power_label">Power:\t\t</string>
+	<string name="sensor_resolution_label">Resolution:\t</string>
+	<string name="sensor_vendor_label">Vendor:\t\t</string>
+	<string name="sensor_version_label">Version:\t</string>
+	<string name="sensor_max_range_label">Max Range:\t</string>
+	<string name="sensor_min_delay_label">Min Delay:\t</string>
+	<string name="sensor_accuracy_label">Accuracy:\t</string>
+	<string name="sensor_value1_label">Value 1:\t\t</string>
+	<string name="sensor_value2_label">Value 2:\t\t</string>
+	<string name="sensor_value3_label">Value 3:\t\t</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
