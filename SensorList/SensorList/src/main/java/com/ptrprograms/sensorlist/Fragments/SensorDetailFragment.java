@@ -35,7 +35,6 @@ public class SensorDetailFragment extends Fragment implements SensorEventListene
 	private TextView mVendor;
 	private TextView mVersion;
 	private TextView mAccuracy;
-	private TextView mReading;
 	private TextView mValue1;
 	private TextView mValue2;
 	private TextView mValue3;
@@ -49,7 +48,6 @@ public class SensorDetailFragment extends Fragment implements SensorEventListene
 	private TableRow mMaxRangeRow;
 	private TableRow mMinDelayRow;
 	private TableRow mAccuracyRow;
-	private TableRow mReadingRow;
 	private TableRow mValue1Row;
 	private TableRow mValue2Row;
 	private TableRow mValue3Row;
