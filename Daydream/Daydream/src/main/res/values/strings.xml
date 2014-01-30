@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Daydream</string>
+	<string name="random_quote_url_json">http://www.iheartquotes.com/api/v1/random?format=json</string>
+</resources>
