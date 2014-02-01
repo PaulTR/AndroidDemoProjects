@@ -35,7 +35,6 @@ public class SensorDetailFragment extends Fragment implements SensorEventListene
 	private TextView mVendor;
 	private TextView mVersion;
 	private TextView mAccuracy;
-	private TextView mReading;
 	private TextView mValue1;
 	private TextView mValue2;
 	private TextView mValue3;
@@ -49,7 +48,6 @@ public class SensorDetailFragment extends Fragment implements SensorEventListene
 	private TableRow mMaxRangeRow;
 	private TableRow mMinDelayRow;
 	private TableRow mAccuracyRow;
-	private TableRow mReadingRow;
 	private TableRow mValue1Row;
 	private TableRow mValue2Row;
 	private TableRow mValue3Row;
@@ -364,27 +362,27 @@ public class SensorDetailFragment extends Fragment implements SensorEventListene
 		mAccuracyRow.setVisibility( View.VISIBLE );
 	}
 
-	private void populateValue1Row( float theta ) {
+	private void populateValue1Row( float value ) {
 		if( mValue1Row == null || mValue1 == null )
 			return;
 
-		mValue1.setText( String.valueOf( theta ) );
+		mValue1.setText( String.valueOf( value ) );
 		mValue1Row.setVisibility( View.VISIBLE );
 	}
 
-	private void populateValue2Row( float theta ) {
+	private void populateValue2Row( float value ) {
 		if( mValue2Row == null || mValue2 == null )
 			return;
 
-		mValue2.setText( String.valueOf( theta ) );
+		mValue2.setText( String.valueOf( value ) );
 		mValue2Row.setVisibility( View.VISIBLE );
 	}
 
-	private void populateValue3Row( float theta ) {
+	private void populateValue3Row( float value ) {
 		if( mValue3Row == null || mValue3 == null )
 			return;
 
-		mValue3.setText( String.valueOf( theta ) );
+		mValue3.setText( String.valueOf( value ) );
 		mValue3Row.setVisibility( View.VISIBLE );
 	}
 
