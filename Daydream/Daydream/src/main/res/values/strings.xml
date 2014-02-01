@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Daydream</string>
+	<string name="random_quote_url_json">http://www.iheartquotes.com/api/v1/random?format=json&amp;source=simpsons_chalkboard</string>
+	<string name="volley_error">\"Oh no!\" - Mr. Bill\nSomething went wrong and we\'re not able to load a quote. Check your network connection.</string>
+</resources>
