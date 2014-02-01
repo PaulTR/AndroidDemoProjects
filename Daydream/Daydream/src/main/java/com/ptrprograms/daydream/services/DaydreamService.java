@@ -11,8 +11,8 @@ import com.ptrprograms.daydream.views.QuoteView;
 public class DaydreamService extends DreamService {
 
 	@Override
-	public void onDreamingStarted() {
-		super.onDreamingStarted();
+	public void onAttachedToWindow() {
+		super.onAttachedToWindow();
 
 		final QuoteView view = new QuoteView( this );
 		view.setLayoutParams( new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT ) );
