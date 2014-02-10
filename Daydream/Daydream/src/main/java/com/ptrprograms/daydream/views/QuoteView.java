@@ -62,7 +62,7 @@ public class QuoteView extends TextView  {
 		mFadeOut = new AlphaAnimation( 1.0f, 0.0f );
 		mFadeOut.setDuration( mFadeOutTime );
 		mFadeOut.setFillAfter( true );
-		mFadeOut.setAnimationListener(new Animation.AnimationListener() {
+		mFadeOut.setAnimationListener( new Animation.AnimationListener() {
 
 			@Override
 			public void onAnimationStart(Animation animation) {
