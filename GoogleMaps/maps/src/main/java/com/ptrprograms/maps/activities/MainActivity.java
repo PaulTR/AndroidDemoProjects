@@ -14,9 +14,9 @@ public class MainActivity extends ActionBarActivity implements mapListener {
 	PTRMapFragment fragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void onCreate( Bundle savedInstanceState ) {
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_main );
 		initialize();
     }
 
@@ -44,7 +44,7 @@ public class MainActivity extends ActionBarActivity implements mapListener {
 
 	@Override
 	public void longClickedMap( LatLng latLng ) {
-		fragment.addMarker(latLng);
+		fragment.addMarker( latLng );
 	}
 
 }
