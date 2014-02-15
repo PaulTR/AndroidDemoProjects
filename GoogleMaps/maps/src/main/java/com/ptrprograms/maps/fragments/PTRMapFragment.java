@@ -170,7 +170,6 @@ public class PTRMapFragment extends Fragment implements GooglePlayServicesClient
 		double lng, lat;
 		float tilt, bearing, zoom;
 
-		//Using the Denver Zoo as the default
 		SharedPreferences settings = getActivity().getSharedPreferences( EXTRAS_SHARED_PREFERENCES, 0 );
 		lng = Double.longBitsToDouble( settings.getLong( SAVED_STATE_LONG, Double.doubleToLongBits( mLocationClient.getLastLocation().getLongitude() ) ) );
 		lat = Double.longBitsToDouble( settings.getLong( SAVED_STATE_LAT, Double.doubleToLongBits( mLocationClient.getLastLocation().getLatitude() ) ) );
