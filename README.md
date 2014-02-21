@@ -1,7 +1,7 @@
 AndroidDemoProjects
 ===================
 
-Collection of Small Android Projects
+Collection of Small Android Projects. Anyone may use or modify my code under the Apache 2.0 license. This is all for examples and to help others, so enjoy :)
 
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
 
