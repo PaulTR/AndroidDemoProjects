@@ -17,7 +17,7 @@ public class MuzeiImageGenerator extends RemoteMuzeiArtSource {
 
 	private static final int ROTATE_TIME_MILLIS = 60 * 60 * 1000; //Every hour a new kitty!
 	private static final String ACCEPTED_FILE_EXTENSION = "jpg";
-	private static final String BASE_URL = "http://thecatapi.com/api/images/get?format=src&type=jpg&size=full";
+	private static final String BASE_URL = "http://thecatapi.com/api/images/get?format=src&type=jpg&size=full&category=space";
 	private static final String NAME = "RandomKittyMuzei";
 
 	public MuzeiImageGenerator() {
