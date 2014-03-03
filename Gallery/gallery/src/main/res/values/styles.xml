@@ -13,8 +13,8 @@
     <style name="activityMainGridView" parent="android:Widget.GridView">
         <item name="android:numColumns">2</item>
         <item name="android:gravity">center</item>
-        <item name="android:verticalSpacing">4dp</item>
-        <item name="android:horizontalSpacing">4dp</item>
+        <item name="android:verticalSpacing">10dp</item>
+        <item name="android:horizontalSpacing">10dp</item>
         <item name="android:stretchColumns">true</item>
         <item name="android:cacheColorHint">@android:color/transparent</item>
     </style>

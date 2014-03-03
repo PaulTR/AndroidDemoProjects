@@ -7,17 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.ptrprograms.gallery.R;
 import com.ptrprograms.gallery.model.Image;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-public class ImageFragment extends Fragment implements View.OnClickListener{
+public class ImageFragment extends Fragment {
 
     public final static String EXTRA_IMAGE = "image";
     private final static String CAPTION_STATE = "caption_state";
 
+	private ProgressBar mProgress;
     private ImageView mImageView;
     private TextView mCaption;
     private Image mImage;
@@ -54,15 +57,11 @@ public class ImageFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        if( view.findViewById( R.id.fragment_image_detail_image ) != null ) {
-            mImageView = ( ImageView ) view.findViewById( R.id.fragment_image_detail_image );
-            mImageView.setVisibility( View.GONE );
-        }
-
-        if( view.findViewById( R.id.fragment_image_detail_caption ) != null ) {
-            mCaption = ( TextView ) view.findViewById( R.id.fragment_image_detail_caption );
-            mCaption.setVisibility( View.GONE );
-        }
+		mProgress = (ProgressBar) view.findViewById( R.id.progress );
+		mImageView = ( ImageView ) view.findViewById( R.id.fragment_image_detail_image );
+		mImageView.setVisibility( View.GONE );
+		mCaption = ( TextView ) view.findViewById( R.id.fragment_image_detail_caption );
+		mCaption.setVisibility( View.GONE );
     }
 
     @Override
@@ -80,9 +79,27 @@ public class ImageFragment extends Fragment implements View.OnClickListener{
         if( TextUtils.isEmpty( url ) || mImageView == null )
             return;
 
-        Picasso.with( getActivity() ).load( url ).into( mImageView );
-        mImageView.setVisibility( View.VISIBLE );
-        mImageView.setOnClickListener( this );
+        Picasso.with( getActivity() ).load( url ).into( mImageView, new Callback() {
+			@Override
+			public void onSuccess() {
+				mImageView.setVisibility( View.VISIBLE );
+				mProgress.setVisibility( View.GONE );
+				mImageView.setOnClickListener( new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						if( mCaption.getVisibility() == View.GONE && !TextUtils.isEmpty( mCaption.getText() ) )
+							mCaption.setVisibility( View.VISIBLE );
+						else
+							mCaption.setVisibility( View.GONE );
+					}
+				});
+			}
+
+			@Override
+			public void onError() {
+
+			}
+		});
     }
 
     private void loadCaption( String caption ) {
@@ -97,13 +114,5 @@ public class ImageFragment extends Fragment implements View.OnClickListener{
     public void onDestroy() {
         super.onDestroy();
         Picasso.with( getActivity() ).cancelRequest( mImageView );
-    }
-
-    @Override
-    public void onClick(View view) {
-        if( mCaption.getVisibility() == View.GONE )
-            mCaption.setVisibility( View.VISIBLE );
-        else
-            mCaption.setVisibility( View.GONE );
     }
 }
