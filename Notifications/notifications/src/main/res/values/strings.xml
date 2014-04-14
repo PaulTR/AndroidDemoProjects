@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Notifications</string>
+    <string name="action_settings">Settings</string>
+	<string name="notification_build">Notify Me!</string>
+	<string name="notification_title">Content Title</string>
+	<string name="notification_info">Content Info</string>
+	<string name="notification_text">Content Text</string>
+	<string name="notification_ticker">Ticker Text</string>
+	<string name="notification_sub">Sub Text</string>
+	<string name="notification_use_vibration">Use Vibrations</string>
+	<string name="notification_use_large_icon">Use Large Icon</string>
+	<string name="notification_use_small_icon">Use Small Icon</string>
+	<string name="notification_show_when">Show Timestamp</string>
+	<string name="notification_use_big_picture">Use Big Picture Style</string>
+	<string name="notification_use_chronometer">Show Time as Chronometer</string>
+	<string name="notification_use_sound">Play Notification Sound</string>
+	<string name="notification_use_intent">Open Activity from Intent</string>
+
+</resources>
