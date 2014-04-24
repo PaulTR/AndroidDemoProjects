@@ -1,8 +1,6 @@
 AndroidDemoProjects
 ===================
 
-Collection of Small Android Projects. Anyone may use or modify my code under the Apache 2.0 license. This is all for examples and to help others, so enjoy :)
-
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
 
 Gallery: Displays a grid of thumbnails that can be clicked to show a larger version of an image. Also allows the larger detailed version of the image to be swiped in order to show additional images in the gallery.
