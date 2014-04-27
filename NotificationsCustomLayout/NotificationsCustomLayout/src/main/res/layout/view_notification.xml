@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/notification_expanded_height">
+
+	<ImageView
+		android:id="@+id/large_icon"
+		android:layout_width="@dimen/notification_expanded_height"
+		android:layout_height="@dimen/notification_expanded_height"
+		android:scaleType="centerCrop"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentBottom="true"
+	/>
+	<LinearLayout
+		android:id="@+id/buttons_row"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_toRightOf="@id/large_icon"
+		android:orientation="horizontal">
+
+		<ImageButton
+			android:id="@+id/ib_rewind"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="@dimen/notification_button_height"
+			android:scaleType="fitCenter" />
+
+		<ImageButton
+			android:id="@+id/ib_play_pause"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="@dimen/notification_button_height"
+			android:scaleType="fitCenter" />
+
+		<ImageButton
+			android:id="@+id/ib_fast_forward"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="@dimen/notification_button_height"
+			android:scaleType="fitCenter" />
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:text="@string/app_name"
+		android:textSize="@dimen/notification_text_size"
+		android:layout_gravity="center"
+		android:gravity="center"
+		android:layout_toRightOf="@+id/large_icon"
+		android:layout_above="@+id/buttons_row"/>
+
+</RelativeLayout>
