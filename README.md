@@ -14,3 +14,5 @@ NotificationsCustomLayout: Creates a custom expanded layout for Jellybean+ that 
 Random Kitty Muzei: Plugin for Muzei that displays a new random cat image every hour from a remote source as a device wallpaper.
 
 Sensor List: Gathers a list of all hardware sensors available on the device, and displays the values that they produce in real time.
+
+Wear: Examples of possible notifications using the Google Wear developer preview.
