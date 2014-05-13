@@ -15,4 +15,6 @@ Random Kitty Muzei: Plugin for Muzei that displays a new random cat image every 
 
 Sensor List: Gathers a list of all hardware sensors available on the device, and displays the values that they produce in real time.
 
+StaggeredGridView: Sample app using Etsy's StaggeredGridView library - https://github.com/etsy/AndroidStaggeredGrid
+
 Wear: Examples of possible notifications using the Google Wear developer preview.
