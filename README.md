@@ -7,6 +7,8 @@ Gallery: Displays a grid of thumbnails that can be clicked to show a larger vers
 
 Google Maps: Basic implementation of the Google Maps fragment that allows the user to place markers and display street addresses.
 
+NavigationDrawer: An example of using the navigation drawer in an activity to load fragments. Also an example of Square's Otto library for firing events from a list to the activity.
+
 Notifications: Demo of different options available in a standard notification from the Android OS.
 
 NotificationsCustomLayout: Creates a custom expanded layout for Jellybean+ that uses a service to perform actions based on notification button clicks.
