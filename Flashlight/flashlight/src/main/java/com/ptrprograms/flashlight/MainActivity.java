@@ -61,7 +61,6 @@ public class MainActivity extends Activity {
 		mParameters = mCamera.getParameters();
 		mParameters.setFlashMode( Camera.Parameters.FLASH_MODE_OFF );
 		mCamera.setParameters( mParameters );
-		mCamera.stopPreview();
 		mFlashlightOn = false;
 	}
 
@@ -69,11 +68,10 @@ public class MainActivity extends Activity {
 	{
 		if( mCamera == null )
 			mCamera = Camera.open();
-		
+
 		mParameters = mCamera.getParameters();
 		mParameters.setFlashMode( Camera.Parameters.FLASH_MODE_TORCH );
 		mCamera.setParameters(mParameters);
-		mCamera.startPreview();
 		mFlashlightOn = true;
 	}
 }
