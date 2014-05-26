@@ -27,6 +27,7 @@ public class VideoPlayerActivity extends Activity {
 	protected VideoView mVideoView;
 	protected ProgressBar mSpinningProgressBar;
 	protected Uri mUri;
+	protected boolean mIsPlaying = false;
 	private String TAG = VideoPlayerActivity.class.getSimpleName();
 
 	@Override
@@ -92,7 +93,7 @@ public class VideoPlayerActivity extends Activity {
 
 	protected void setupMediaController() {
 		mMediaController = new MediaController( this );
-		mMediaController.setEnabled( true );
+		mMediaController.setEnabled(true);
 		mMediaController.show();
 		mMediaController.setMediaPlayer( mVideoView );
 	}
@@ -101,6 +102,21 @@ public class VideoPlayerActivity extends Activity {
 		mVideoView.setOnCompletionListener( null );
 		mVideoView.setOnErrorListener( null );
 		mVideoView.setOnPreparedListener( null );
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		if( mMediaPlayer != null )
+			mIsPlaying = mMediaPlayer.isPlaying();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if( mIsPlaying && mMediaPlayer != null ) {
+			mMediaPlayer.start();
+		}
 	}
 
 	protected MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
