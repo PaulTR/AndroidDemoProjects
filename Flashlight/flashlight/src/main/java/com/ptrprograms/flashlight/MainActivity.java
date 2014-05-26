@@ -30,9 +30,9 @@ public class MainActivity extends Activity {
 				if( getPackageManager().hasSystemFeature( PackageManager.FEATURE_CAMERA_FLASH ) )
 				{
 					if( mFlashlightOn )
-						activateFlashlight();
-					else
 						deactivateFlashlight();
+					else
+						activateFlashlight();
 				}
 			}
 		});
@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
 		mCamera.release();
 	}
 
-	private void activateFlashlight()
+	private void deactivateFlashlight()
 	{
 		if( mCamera == null || mParameters == null )
 			return;
@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
 		mFlashlightOn = false;
 	}
 
-	private void deactivateFlashlight()
+	private void activateFlashlight()
 	{
 		if( mCamera == null )
 			mCamera = Camera.open();
