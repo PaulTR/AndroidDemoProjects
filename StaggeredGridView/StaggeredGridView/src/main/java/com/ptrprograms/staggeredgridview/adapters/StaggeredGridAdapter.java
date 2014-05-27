@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.etsy.android.grid.util.DynamicHeightImageView;
 import com.ptrprograms.staggeredgridview.R;
@@ -46,6 +48,15 @@ public class StaggeredGridAdapter extends ArrayAdapter<GridItem> {
 		holder.titleTextView.setText( getItem( position ).getTitle() );
 		holder.subtitleTextView.setText( getItem( position ).getSubtitle() );
 		holder.imageView.setHeightRatio( getItem( position ).getRatio() );
+
+		final String itemText = holder.titleTextView.getText().toString();
+		convertView.setOnClickListener( new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Toast.makeText( getContext(), itemText, Toast.LENGTH_SHORT ).show();
+			}
+		});
+
 		return convertView;
 	}
 
