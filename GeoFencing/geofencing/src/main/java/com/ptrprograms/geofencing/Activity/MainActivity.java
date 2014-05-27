@@ -10,7 +10,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -72,38 +71,27 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 				break;
 			}
 			case ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED: {
-				Toast.makeText( this,
-						"Geofencing service requires an update, please open Google Play.",
-						Toast.LENGTH_SHORT ).show();
 				finish();
 			}
 			default: {
-				Toast.makeText(this,
-						"Geofencing service is not available.",
-						Toast.LENGTH_SHORT).show();
 				finish();
 			}
 		}
 	}
 
 	private void startGeofence() {
-		Toast.makeText( this, "startGeofence", Toast.LENGTH_SHORT ).show();
 		Location location = mLocationClient.getLastLocation();
 		int radius = 100;
 
 		Geofence.Builder builder = new Geofence.Builder();
 		mGeofence = builder
-				//Unique to this geofence
 				.setRequestId(FENCE_ID)
-						//Size and location
 				.setCircularRegion(
 						location.getLatitude(),
 						location.getLongitude(),
 						radius)
-						//Events both in and out of the fence
 				.setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER
 						| Geofence.GEOFENCE_TRANSITION_EXIT)
-						//Keep alive
 				.setExpirationDuration(Geofence.NEVER_EXPIRE)
 				.build();
 
@@ -132,14 +120,8 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 	}
 
 	public class GeofenceSampleReceiver extends BroadcastReceiver {
-		/*
-		 * Define the required method for broadcast receivers
-		 * This method is invoked when a broadcast Intent triggers the receiver
-		 */
 		@Override
 		public void onReceive(Context context, Intent intent) {
-
-			Toast.makeText( context, "onReceive: " + intent.getAction().toString() , Toast.LENGTH_SHORT ).show();
 			startService( mIntent );
 		}
 	}
@@ -156,9 +138,7 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 
 	@Override
 	public void onAddGeofencesResult(int status, String[] geofenceIds ) {
-		Toast.makeText( this, "addGeofencesResult", Toast.LENGTH_SHORT ).show();
 		if( status == LocationStatusCodes.SUCCESS ) {
-			Toast.makeText( this, "addGseofencesResult SUCCESS", Toast.LENGTH_SHORT ).show();
 			Intent intent = new Intent( mIntent );
 			intent.setAction(GeofencingService.ACTION_INIT);
 			startService( intent );
@@ -181,7 +161,6 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 	@Override
 	public void onRemoveGeofencesByPendingIntentResult(int status, PendingIntent pendingIntent) {
 		if( status == LocationStatusCodes.SUCCESS ) {
-			Toast.makeText( this, "onRemoveGeofencesByPendingIntentResult SUCCESS", Toast.LENGTH_SHORT ).show();
 			stopService( mIntent );
 		}
 	}
