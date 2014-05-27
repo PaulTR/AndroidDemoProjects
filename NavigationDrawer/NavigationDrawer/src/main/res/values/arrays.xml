@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_items">
+        <item>@string/fragment_image</item>
+        <item>@string/fragment_text</item>
+        <item>@string/fragment_number_list</item>
+    </string-array>
+</resources>

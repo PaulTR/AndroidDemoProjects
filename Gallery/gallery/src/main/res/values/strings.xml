@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gallery</string>
+    <string name="action_settings">Settings</string>
+    <string name="feed_url">http://ptrprograms.com/JSON/gallery.json</string>
+    <string name="title_activity_image">Image</string>
+
+</resources>

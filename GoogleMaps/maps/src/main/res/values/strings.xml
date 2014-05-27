@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="maps_api_key"></string>
+
+	<string name="dialog_play_services_unavailable">Google Play Services are unavailable.</string>
+	<string name="dialog_download_play_services">Download Play Services</string>
+	<string name="dialog_close_program">Close Program</string>
+    <string name="app_name">GoogleMaps</string>
+
+	<string name="action_add_location">Add Location</string>
+
+</resources>

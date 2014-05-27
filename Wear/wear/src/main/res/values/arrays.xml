@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="wear_notification_types">
+		<item>@string/notification_basic</item>
+		<item>@string/notification_add_action</item>
+		<item>@string/notification_quick_replies</item>
+		<item>@string/notification_pages</item>
+		<item>@string/notification_stacked</item>
+	</string-array>
+
+	<string-array name="getting_around">
+		<item>Hop</item>
+		<item>Skip</item>
+		<item>Jump</item>
+		<item>Leap</item>
+		<item>Bound</item>
+	</string-array>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Wear</string>
+    <string name="action_settings">Settings</string>
+
+	<string name="big_content_summary">Lorem ipsum dolor sit amet</string>
+	<string name="notification_basic">Basic Notification</string>
+	<string name="notification_add_action">Action Notification</string>
+	<string name="notification_quick_replies">Quick Replies Notification</string>
+	<string name="notification_pages">Multi-Page Notification</string>
+	<string name="notification_stacked">Stacked Notification</string>
+    <string name="notification_page_1">Page 1</string>
+</resources>

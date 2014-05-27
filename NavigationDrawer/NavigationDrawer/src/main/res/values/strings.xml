@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NavigationDrawer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open_title">Select a Fragment</string>
+    <string name="drawer_close_title">NavigationDrawer</string>
+
+    <string name="fragment_image">Image Fragment</string>
+    <string name="fragment_text">Text Fragment</string>
+    <string name="fragment_number_list">Number List Fragment</string>
+</resources>

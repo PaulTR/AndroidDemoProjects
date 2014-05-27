@@ -1,0 +1,45 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+    </style>
+
+    <style name="activityMainDescriptionStyle" parent="android:TextAppearance.Medium">
+
+    </style>
+
+    <style name="activityMainGridView" parent="android:Widget.GridView">
+        <item name="android:numColumns">2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:verticalSpacing">10dp</item>
+        <item name="android:horizontalSpacing">10dp</item>
+        <item name="android:stretchColumns">true</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+    </style>
+
+    <style name="gridImagetyle" parent="android:Widget">
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="activityMainImage" parent="android:Widget">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="fragmentImageDetailsMainImageStyle" parent="android:Widget">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="fragmentImageDetailsCaptionStyle" parent="android:TextAppearance.Medium">
+        <item name="android:background">@color/caption_background</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:minLines">3</item>
+    </style>
+
+</resources>

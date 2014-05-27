@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VideoPlayer</string>
+    <string name="button_text">Play Video</string>
+    <string name="default_video_error">Error playing video</string>
+    <string name="default_video_error_title">Error</string>
+    <string name="default_negative_button">Close</string>
+
+</resources>
