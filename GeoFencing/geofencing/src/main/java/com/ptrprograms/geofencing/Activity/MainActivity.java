@@ -2,13 +2,9 @@ package com.ptrprograms.geofencing.Activity;
 
 import android.app.Activity;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
@@ -23,21 +19,19 @@ import com.ptrprograms.geofencing.Service.GeofencingService;
 
 import java.util.ArrayList;
 
-
 public class MainActivity extends Activity implements GooglePlayServicesClient.ConnectionCallbacks,
 		GooglePlayServicesClient.OnConnectionFailedListener,
 		LocationClient.OnAddGeofencesResultListener,
 		LocationClient.OnRemoveGeofencesResultListener {
 
-	private static String FENCE_ID = "com.ptrprograms.geofence";
+	private final static String FENCE_ID = "com.ptrprograms.geofence";
+	private final int RADIUS = 100;
 
 	private ToggleButton mToggleButton;
 	private Geofence mGeofence;
 	private LocationClient mLocationClient;
 	private Intent mIntent;
 	private PendingIntent mPendingIntent;
-	private GeofenceSampleReceiver mBroadcastReceiver;
-	IntentFilter mIntentFilter = new IntentFilter();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +44,10 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 		mIntent = new Intent( this, GeofencingService.class );
 		mPendingIntent = PendingIntent.getService( this, 0, mIntent, PendingIntent.FLAG_UPDATE_CURRENT );
 
-		mBroadcastReceiver = new GeofenceSampleReceiver();
-
 		mToggleButton = (ToggleButton) findViewById( R.id.geofencing_button );
 		mToggleButton.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+			public void onCheckedChanged( CompoundButton compoundButton, boolean b ) {
 				if( b ) {
 					startGeofence();
 				} else {
@@ -81,18 +73,12 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 
 	private void startGeofence() {
 		Location location = mLocationClient.getLastLocation();
-		int radius = 100;
 
 		Geofence.Builder builder = new Geofence.Builder();
-		mGeofence = builder
-				.setRequestId(FENCE_ID)
-				.setCircularRegion(
-						location.getLatitude(),
-						location.getLongitude(),
-						radius)
-				.setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER
-						| Geofence.GEOFENCE_TRANSITION_EXIT)
-				.setExpirationDuration(Geofence.NEVER_EXPIRE)
+		mGeofence = builder.setRequestId( FENCE_ID )
+				.setCircularRegion( location.getLatitude(), location.getLongitude(), RADIUS )
+				.setTransitionTypes( Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT )
+				.setExpirationDuration( Geofence.NEVER_EXPIRE )
 				.build();
 
 		ArrayList<Geofence> geofences = new ArrayList<Geofence>();
@@ -110,20 +96,12 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 		if ( !mLocationClient.isConnected() && !mLocationClient.isConnecting() ) {
 			mLocationClient.connect();
 		}
-		LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, mIntentFilter);
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
 		mLocationClient.disconnect();
-	}
-
-	public class GeofenceSampleReceiver extends BroadcastReceiver {
-		@Override
-		public void onReceive(Context context, Intent intent) {
-			startService( mIntent );
-		}
 	}
 
 	@Override
@@ -140,7 +118,6 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 	public void onAddGeofencesResult(int status, String[] geofenceIds ) {
 		if( status == LocationStatusCodes.SUCCESS ) {
 			Intent intent = new Intent( mIntent );
-			intent.setAction(GeofencingService.ACTION_INIT);
 			startService( intent );
 		}
 	}
@@ -153,9 +130,8 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 	@Override
 	public void onRemoveGeofencesByRequestIdsResult(int status, String[] strings) {
 		if( status == LocationStatusCodes.SUCCESS ) {
+			stopService( mIntent );
 		}
-
-		stopService( mIntent );
 	}
 
 	@Override
@@ -164,4 +140,5 @@ public class MainActivity extends Activity implements GooglePlayServicesClient.C
 			stopService( mIntent );
 		}
 	}
+
 }

@@ -16,8 +16,6 @@ import com.ptrprograms.geofencing.R;
  */
 public class GeofencingService extends IntentService {
 
-	public static String ACTION_INIT = "com.ptrprograms.geofencing.init";
-
 	private NotificationManager mNotificationManager;
 
 	public GeofencingService(String name) {
@@ -29,15 +27,15 @@ public class GeofencingService extends IntentService {
 	}
 
 	@Override
-	public IBinder onBind(Intent intent) {
+	public IBinder onBind( Intent intent ) {
 		return null;
 	}
 
 	@Override
-	protected void onHandleIntent(Intent intent) {
+	protected void onHandleIntent( Intent intent ) {
 		NotificationCompat.Builder builder = new NotificationCompat.Builder( this );
 		builder.setSmallIcon( R.drawable.ic_launcher );
-		builder.setDefaults(Notification.DEFAULT_ALL );
+		builder.setDefaults( Notification.DEFAULT_ALL );
 		builder.setOngoing( true );
 
 		int transitionType = LocationClient.getGeofenceTransition( intent );
