@@ -158,8 +158,7 @@ public class AppLinkService extends Service implements IProxyListenerALM {
 				break;
 			}
 			case NOT_AUDIBLE: {
-				if( mPlayer != null )
-					stopAudio();
+				stopAudio();
 				break;
 			}
 		}
@@ -182,7 +181,7 @@ public class AppLinkService extends Service implements IProxyListenerALM {
 			mPlayer = new MediaPlayer();
 
 		try {
-			mProxy.show("Loading audio stream...", "", TextAlignment.CENTERED, mCorrelationId++);
+			mProxy.show("Loading...", "", TextAlignment.CENTERED, mCorrelationId++);
 		} catch( SyncException e ) {}
 
 		mPlayer.reset();
@@ -208,7 +207,7 @@ public class AppLinkService extends Service implements IProxyListenerALM {
 
 	private void stopAudio() {
 		if( mPlayer == null )
-			mPlayer = new MediaPlayer();
+			return;
 		mPlayer.pause();
 		try {
 			mProxy.show("Press OK", "to play audio", TextAlignment.CENTERED, mCorrelationId++);
