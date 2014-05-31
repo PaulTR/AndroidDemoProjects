@@ -158,7 +158,8 @@ public class AppLinkService extends Service implements IProxyListenerALM {
 				break;
 			}
 			case NOT_AUDIBLE: {
-				stopAudio();
+				if( mPlayer != null )
+					stopAudio();
 				break;
 			}
 		}
@@ -180,14 +181,21 @@ public class AppLinkService extends Service implements IProxyListenerALM {
 		if( mPlayer == null )
 			mPlayer = new MediaPlayer();
 
+		try {
+			mProxy.show("Loading audio stream...", "", TextAlignment.CENTERED, mCorrelationId++);
+		} catch( SyncException e ) {}
+
 		mPlayer.reset();
 		mPlayer.setAudioStreamType( AudioManager.STREAM_MUSIC );
 		try {
 			mPlayer.setDataSource(url);
 			mPlayer.setOnPreparedListener( new MediaPlayer.OnPreparedListener() {
 				@Override
-				public void onPrepared(MediaPlayer mediaPlayer) {
+				public void onPrepared( MediaPlayer mediaPlayer ) {
 					mediaPlayer.start();
+					try {
+						mProxy.show("Playing online audio", "", TextAlignment.CENTERED, mCorrelationId++);
+					} catch( SyncException e ) {}
 				}
 			});
 			mPlayer.prepare();
@@ -202,6 +210,9 @@ public class AppLinkService extends Service implements IProxyListenerALM {
 		if( mPlayer == null )
 			mPlayer = new MediaPlayer();
 		mPlayer.pause();
+		try {
+			mProxy.show("Press OK", "to play audio", TextAlignment.CENTERED, mCorrelationId++);
+		} catch( SyncException e ) {}
 	}
 
 	private void subscribeToButtons() {
