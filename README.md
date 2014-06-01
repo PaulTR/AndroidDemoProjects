@@ -5,7 +5,11 @@ Daydream: Utilizes the Daydream Android service to display quotes pulled from a 
 
 Flashlight: Can't be an Android developer without making a flashlight app, right?
 
+FordAppLinkAudio: Uses Sync AppLink to play a live online audio stream through Ford's vehicle audio systems.
+
 Gallery: Displays a grid of thumbnails that can be clicked to show a larger version of an image. Also allows the larger detailed version of the image to be swiped in order to show additional images in the gallery.
+
+GeoFencing: Demo of creating a geofence and posting a notification whenever a user enters or exits the area.
 
 Google Maps: Basic implementation of the Google Maps fragment that allows the user to place markers and display street addresses.
 
@@ -21,6 +25,6 @@ Sensor List: Gathers a list of all hardware sensors available on the device, and
 
 StaggeredGridView: Sample app using Etsy's StaggeredGridView library - https://github.com/etsy/AndroidStaggeredGrid
 
-Wear: Examples of possible notifications using the Google Wear developer preview.
-
 Video Player: Native video player for playing remote content.
+
+Wear: Examples of possible notifications using the Google Wear developer preview.
