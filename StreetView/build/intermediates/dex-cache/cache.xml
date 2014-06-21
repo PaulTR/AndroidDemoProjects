@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/PaulTR/Documents/Pauls/AndroidDemoProjects/StreetView/streetview/build/intermediates/pre-dexed/debug/support-v4-19.0.1-3f4e6d44dbb708f2be1feea2bcbd594b35146265.jar"
+        jar="/Users/PaulTR/Documents/sdk/extras/android/m2repository/com/android/support/support-v4/19.0.1/support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
+    <item
+        dex="/Users/PaulTR/Documents/Pauls/AndroidDemoProjects/StreetView/streetview/build/intermediates/pre-dexed/debug/classes-8aefc993e8f791e52de2afec99bb84ed980d34aa.jar"
+        jar="/Users/PaulTR/Documents/Pauls/AndroidDemoProjects/StreetView/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3dfdf1db5ce5ea2999a5dcde8c8e650b02660059"/>
+
+</pre-dex-items>
