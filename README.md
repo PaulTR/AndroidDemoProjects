@@ -25,6 +25,8 @@ Sensor List: Gathers a list of all hardware sensors available on the device, and
 
 StaggeredGridView: Sample app using Etsy's StaggeredGridView library - https://github.com/etsy/AndroidStaggeredGrid
 
+Stay Awake: Using the official Android Wear SDK that came out a couple days ago, I wrote an app that lets users select a time interval that vibrates the Wear on their wrist whenever the timer ends, then repeats. The goal is to help keep drivers alert on long drives.
+
 Street View: Implements the new Google Street View feature.
 
 Video Player: Native video player for playing remote content.
