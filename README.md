@@ -25,6 +25,8 @@ Sensor List: Gathers a list of all hardware sensors available on the device, and
 
 StaggeredGridView: Sample app using Etsy's StaggeredGridView library - https://github.com/etsy/AndroidStaggeredGrid
 
+Street View: Implements the new Google Street View feature.
+
 Video Player: Native video player for playing remote content.
 
 Wear: Examples of possible notifications using the Google Wear developer preview.
