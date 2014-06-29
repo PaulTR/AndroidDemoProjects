@@ -14,6 +14,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.ptrprograms.stayawake.Activities.IterationActivity;
+import com.ptrprograms.stayawake.R;
 
 /**
  * Created by PaulTR on 6/29/14.
@@ -40,7 +41,7 @@ public class TimerService extends IntentService
 
     private void showAlarm() {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate( 3000 );
+        v.vibrate( getResources().getInteger( R.integer.vibration_duration ) );
         Intent intent = new Intent( this, IterationActivity.class );
         intent.addFlags( ( Intent.FLAG_ACTIVITY_NEW_TASK ) );
         startActivity( intent );

@@ -8,4 +8,5 @@
         <item>10</item>
         <item>20</item>
     </integer-array>
+    <integer name="vibration_duration">2000</integer>
 </resources>

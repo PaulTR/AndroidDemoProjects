@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
@@ -110,6 +111,7 @@ public class IterationActivity  extends Activity
                 .setContentTitle( "Stay Awake" )
                 .setContentText(TimeUtil.getTimeString( duration ) )
                 .setUsesChronometer( true )
+                .setLargeIcon( BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher ) )
                 .setWhen( System.currentTimeMillis() + duration )
                 .addAction( R.drawable.ic_launcher, "Remove Timer", pendingRemoveIntent )
                 .setDeleteIntent( pendingRemoveIntent )
