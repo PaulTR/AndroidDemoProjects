@@ -6,13 +6,10 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationManagerCompat;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.ptrprograms.stayawake.Activities.IterationActivity;
 import com.ptrprograms.stayawake.R;
 
@@ -20,8 +17,6 @@ import com.ptrprograms.stayawake.R;
  * Created by PaulTR on 6/29/14.
  */
 public class TimerService extends IntentService
-        implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener
 {
 
     public TimerService() {
@@ -43,7 +38,7 @@ public class TimerService extends IntentService
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate( getResources().getInteger( R.integer.vibration_duration ) );
         Intent intent = new Intent( this, IterationActivity.class );
-        intent.addFlags( ( Intent.FLAG_ACTIVITY_NEW_TASK ) );
+        intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
         startActivity( intent );
     }
 
@@ -62,20 +57,5 @@ public class TimerService extends IntentService
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong( IterationActivity.SAVED_STATE_SELECTED_DURATION, 0 );
         editor.apply();
-    }
-
-    @Override
-    public void onConnected(Bundle bundle) {
-
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-
     }
 }

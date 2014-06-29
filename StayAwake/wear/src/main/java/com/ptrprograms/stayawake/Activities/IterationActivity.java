@@ -27,10 +27,11 @@ import com.ptrprograms.stayawake.Utils.TimeUtil;
 
 import java.util.ArrayList;
 
-public class IterationActivity  extends Activity
+public class IterationActivity extends Activity
         implements AdapterView.OnItemClickListener,
         GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener {
+        GoogleApiClient.OnConnectionFailedListener
+{
 
     public static final String EXTRA_DURATION_SECONDS = "extra_duration_seconds";
     public static final String ACTION_REMOVE_TIMER = "action_remove_timer";
@@ -47,8 +48,8 @@ public class IterationActivity  extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getIntent().getIntExtra(EXTRA_DURATION_SECONDS, 0) > 0 && getIntent().getIntExtra(EXTRA_DURATION_SECONDS, 0) <= MAX_ITERATION_SECONDS) {
-            setupTimer(getIntent().getIntExtra(EXTRA_DURATION_SECONDS, 0) * 1000);
+        if (getIntent().getIntExtra( EXTRA_DURATION_SECONDS, 0 ) > 0 && getIntent().getIntExtra( EXTRA_DURATION_SECONDS, 0 ) <= MAX_ITERATION_SECONDS ) {
+            setupTimer( getIntent().getIntExtra( EXTRA_DURATION_SECONDS, 0 ) * 1000 );
             finish();
             return;
         }
@@ -162,7 +163,7 @@ public class IterationActivity  extends Activity
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences( this );
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong( SAVED_STATE_SELECTED_DURATION, mIterationTimes.get( position ).getDuration() );
-        editor.apply();
-        setupTimer(mIterationTimes.get(position).getDuration());
+        editor.commit();
+        setupTimer( mIterationTimes.get( position ).getDuration() );
     }
 }

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Stay Awake</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="mobile_app_description">This app is meant for the Android Wear platform.\n\nThe app can be started by waking up your wear and saying \'ok Google start Stay Awake\'.\n\nThis app is written by Paul Trebilcox-Ruiz and the source and tutorial can be found on http://ptrprograms.blogspot.com</string>
     <string name="action_settings">Settings</string>
 
 </resources>
