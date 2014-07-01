@@ -47,7 +47,7 @@ public class TimerService extends IntentService
             public void run() {
                 v.cancel();
             }
-        }, 2000 );
+        }, getResources().getInteger( R.integer.vibration_duration ) );
         Intent intent = new Intent( this, IterationActivity.class );
         intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
         startActivity( intent );
