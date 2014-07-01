@@ -14,6 +14,9 @@ import android.util.Log;
 import com.ptrprograms.stayawake.Activities.IterationActivity;
 import com.ptrprograms.stayawake.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  * Created by PaulTR on 6/29/14.
  */
@@ -36,9 +39,15 @@ public class TimerService extends IntentService
     }
 
     private void showAlarm() {
-        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        Log.e( "TimerService", "Vibration Duration: " + getResources().getInteger( R.integer.vibration_duration ) );
+        final Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate( getResources().getInteger( R.integer.vibration_duration ) );
+        Timer timer = new Timer();
+        timer.schedule( new TimerTask() {
+            @Override
+            public void run() {
+                v.cancel();
+            }
+        }, 2000 );
         Intent intent = new Intent( this, IterationActivity.class );
         intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
         startActivity( intent );

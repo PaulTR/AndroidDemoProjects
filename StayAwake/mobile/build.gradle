@@ -8,8 +8,8 @@ android {
         applicationId "com.ptrprograms.stayawake"
         minSdkVersion 18
         targetSdkVersion 20
-        versionCode 3
-        versionName "1.2"
+        versionCode 6
+        versionName "1.2.3"
     }
     buildTypes {
         release {

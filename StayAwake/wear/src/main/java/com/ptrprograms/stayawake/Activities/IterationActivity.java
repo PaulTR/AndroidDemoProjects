@@ -70,7 +70,6 @@ public class IterationActivity extends Activity
 
         initList();
         initGoogleApiClient();
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     private void setupIterationArray() {
