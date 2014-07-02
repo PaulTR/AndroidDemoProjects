@@ -9,13 +9,10 @@ import android.content.SharedPreferences;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationManagerCompat;
-import android.util.Log;
 
 import com.ptrprograms.stayawake.Activities.IterationActivity;
 import com.ptrprograms.stayawake.R;
 
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by PaulTR on 6/29/14.
@@ -40,14 +37,8 @@ public class TimerService extends IntentService
 
     private void showAlarm() {
         final Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate( getResources().getInteger( R.integer.vibration_duration ) );
-        Timer timer = new Timer();
-        timer.schedule( new TimerTask() {
-            @Override
-            public void run() {
-                v.cancel();
-            }
-        }, getResources().getInteger( R.integer.vibration_duration ) );
+        long[] pattern = { 0, getResources().getInteger( R.integer.vibration_duration ) };
+        v.vibrate( pattern, -1 );
         Intent intent = new Intent( this, IterationActivity.class );
         intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
         startActivity( intent );
