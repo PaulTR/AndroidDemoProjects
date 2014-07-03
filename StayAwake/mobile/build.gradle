@@ -4,15 +4,6 @@ android {
     compileSdkVersion 19
     buildToolsVersion '20'
 
-    signingConfigs {
-        release {
-            keyAlias 'alias'
-            keyPassword '****'
-            storeFile file('../second_keystore.keystore')
-            storePassword '****'
-        }
-    }
-
     defaultConfig {
         minSdkVersion 18
         targetSdkVersion 19
@@ -24,7 +15,6 @@ android {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-            signingConfig signingConfigs.release
         }
     }
 }

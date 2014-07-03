@@ -1,5 +1,4 @@
-apply plugin: 'com.android.application'
-
+apply plugin: 'android'
 
 android {
     compileSdkVersion 19
@@ -12,20 +11,10 @@ android {
         versionName "1.2.10"
     }
 
-    signingConfigs {
-        release {
-            keyAlias 'alias'
-            keyPassword '****'
-            storeFile file('../second_keystore.keystore')
-            storePassword '****'
-        }
-    }
-
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-            signingConfig signingConfigs.release
         }
     }
 
