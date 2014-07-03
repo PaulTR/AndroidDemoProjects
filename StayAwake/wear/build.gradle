@@ -9,22 +9,35 @@ android {
         applicationId "com.ptrprograms.stayawake"
         minSdkVersion 20
         targetSdkVersion 20
-        versionCode 7
-        versionName "1.2.4"
+        versionCode 89
+        versionName "1.2.7"
     }
+
+    signingConfigs {
+        release {
+            keyAlias 'alias'
+            keyPassword '******'
+            storeFile file('../second_keystore.keystore')
+            storePassword '******'
+        }
+    }
+
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
+
+
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     // You must install or update the Support Repository through the SDK manager to use this dependency.
-    compile 'com.android.support:support-v13:+'
+    compile "com.android.support:support-v13:20.0.+"
     compile 'com.google.android.support:wearable:+'
     compile 'com.google.android.gms:play-services-wearable:+'
 }

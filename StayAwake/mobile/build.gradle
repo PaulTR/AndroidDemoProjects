@@ -4,24 +4,35 @@ android {
     compileSdkVersion 20
     buildToolsVersion "20.0.0"
 
+    signingConfigs {
+        release {
+            keyAlias 'alias'
+            keyPassword '*******'
+            storeFile file('../second_keystore.keystore')
+            storePassword '*******'
+        }
+    }
+
     defaultConfig {
         applicationId "com.ptrprograms.stayawake"
         minSdkVersion 18
         targetSdkVersion 20
-        versionCode 7
-        versionName "1.2.4"
+        versionCode 89
+        versionName "1.2.7"
     }
+
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.google.android.gms:play-services:5.0.+@aar'
-    compile files('../../prebuilt-libs/android-support-v4.jar')
+    compile 'com.google.android.gms:play-services:5.0.+'
+    compile "com.android.support:support-v4:20.0.+"
     wearApp project(':wear')
 }

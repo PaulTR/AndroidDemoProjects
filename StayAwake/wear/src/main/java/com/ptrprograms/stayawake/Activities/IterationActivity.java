@@ -48,7 +48,7 @@ public class IterationActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getIntent().getIntExtra( EXTRA_DURATION_SECONDS, 0 ) > 0 && getIntent().getIntExtra( EXTRA_DURATION_SECONDS, 0 ) <= MAX_ITERATION_SECONDS ) {
+        if ( getIntent().getIntExtra( EXTRA_DURATION_SECONDS, 0 ) > 0 && getIntent().getIntExtra( EXTRA_DURATION_SECONDS, 0 ) <= MAX_ITERATION_SECONDS ) {
             setupTimer( getIntent().getIntExtra( EXTRA_DURATION_SECONDS, 0 ) * 1000 );
             finish();
             return;
@@ -65,7 +65,7 @@ public class IterationActivity extends Activity
         }
 
         setupIterationArray();
-        setContentView(R.layout.activity_iteration);
+        setContentView( R.layout.activity_iteration );
 
         initList();
         initGoogleApiClient();
