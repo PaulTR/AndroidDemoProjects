@@ -12,8 +12,10 @@ android {
     }
     buildTypes {
         release {
+			//This is where the signing cert would be referenced for the release build
         }
 		debug {
+			//This is where the signing cert would be referenced for the debug build
 		}
     }
 

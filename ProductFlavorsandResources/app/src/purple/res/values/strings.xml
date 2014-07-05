@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Gradle Product Flavors - Purple</string>
-    <string name="main_text">This is the purple product flavor</string>
-    <string name="action_settings">Settings</string>
+    <string name="product_flavor_text">This is the purple product flavor</string>
 
 </resources>
