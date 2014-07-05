@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_size_text">This screen is at least 600dp</string>
+</resources>

@@ -1,0 +1,61 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+        }
+		debug {
+		}
+    }
+
+
+	flavorGroups "color", "number"
+
+	productFlavors {
+		blue {
+			applicationId "com.ptrprograms.gradleproductflavorsblue"
+			flavorGroup "color"
+		}
+		green {
+			applicationId "com.ptrprograms.gradleproductflavorsgreen"
+			flavorGroup "color"
+		}
+		orange {
+			applicationId "com.ptrprograms.gradleproductflavorsorange"
+			flavorGroup "color"
+		}
+		purple {
+			applicationId "com.ptrprograms.gradleproductflavorspurple"
+			flavorGroup "color"
+		}
+		red {
+			applicationId "com.ptrprograms.gradleproductflavorsred"
+			flavorGroup "color"
+		}
+		yellow {
+			applicationId "com.ptrprograms.gradleproductflavorsyellow"
+			flavorGroup "color"
+		}
+
+		one {
+			flavorGroup "number"
+		}
+
+		two {
+			flavorGroup "number"
+		}
+	}
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gradle Product Flavors - Blue</string>
+    <string name="main_text">This is the blue product flavor</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

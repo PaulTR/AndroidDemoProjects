@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Gradle Product Flavors</string>
+    <string name="number_flavor">none</string>
+    <string name="product_flavor_text">This is the default text</string>
+    <string name="screen_size_text">This screen is smaller than 600dp</string>
+    <string name="screen_orientation_text">This app is in portrait mode</string>
+
+</resources>
