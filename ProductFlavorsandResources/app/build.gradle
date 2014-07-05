@@ -20,40 +20,40 @@ android {
     }
 
 
-	flavorGroups "color", "number"
+	flavorDimensions "color", "number"
 
 	productFlavors {
 		blue {
 			applicationId "com.ptrprograms.gradleproductflavorsblue"
-			flavorGroup "color"
+			flavorDimension "color"
 		}
 		green {
 			applicationId "com.ptrprograms.gradleproductflavorsgreen"
-			flavorGroup "color"
+			flavorDimension "color"
 		}
 		orange {
 			applicationId "com.ptrprograms.gradleproductflavorsorange"
-			flavorGroup "color"
+			flavorDimension "color"
 		}
 		purple {
 			applicationId "com.ptrprograms.gradleproductflavorspurple"
-			flavorGroup "color"
+			flavorDimension "color"
 		}
 		red {
 			applicationId "com.ptrprograms.gradleproductflavorsred"
-			flavorGroup "color"
+			flavorDimension "color"
 		}
 		yellow {
 			applicationId "com.ptrprograms.gradleproductflavorsyellow"
-			flavorGroup "color"
+			flavorDimension "color"
 		}
 
 		one {
-			flavorGroup "number"
+			flavorDimension "number"
 		}
 
 		two {
-			flavorGroup "number"
+			flavorDimension "number"
 		}
 	}
 }
