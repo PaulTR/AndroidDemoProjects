@@ -49,10 +49,7 @@ public class WatchFaceActivity extends Activity {
     }
 
     private void loadSchoolWatchFace( String schoolCode ) {
-        if( "fresno".equals( schoolCode ) ) {
-            mBackground.setImageResource( R.drawable.bulldog_wallpaper );
-            mClock.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-        } else if( "cuboulder".equals( schoolCode ) ) {
+        if( "cuboulder".equals( schoolCode ) ) {
             mBackground.setImageResource( R.drawable.cuboulder_wallpaper );
             mClock.setTextColor(getResources().getColor(android.R.color.holo_orange_light));
         } else if( "fsu".equals( schoolCode ) ) {
@@ -65,7 +62,9 @@ public class WatchFaceActivity extends Activity {
             mBackground.setImageResource( R.drawable.berkeley_wallpaper );
             mClock.setTextColor(getResources().getColor(android.R.color.holo_orange_light ) );
         } else {
-            mClock.setTextColor(getResources().getColor(android.R.color.black ) );
+            //Default to Fresno
+            mBackground.setImageResource( R.drawable.bulldog_wallpaper );
+            mClock.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
         }
 
         mContainer.setBackgroundColor(getResources().getColor(android.R.color.white));
