@@ -43,7 +43,8 @@ public class WatchFaceActivity extends Activity {
             String schoolCode = pref.getString( SettingsActivity.SHARED_PREFERENCE_SCHOOL, "" );
             loadSchoolWatchFace( schoolCode );
         } else {
-            mClock.setTextColor(getResources().getColor( android.R.color.black ) );
+            mBackground.setImageResource( R.drawable.bulldog_wallpaper );
+            mClock.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
             mContainer.setBackgroundColor(getResources().getColor( android.R.color.white ) );
         }
     }
