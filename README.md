@@ -19,6 +19,8 @@ Notifications: Demo of different options available in a standard notification fr
 
 NotificationsCustomLayout: Creates a custom expanded layout for Jellybean+ that uses a service to perform actions based on notification button clicks.
 
+ProductFlavorsandResources: Uses Gradle and the resource structure of Android to demonstrate creating multiple apps from the same code base.
+
 Random Kitty Muzei: Plugin for Muzei that displays a new random cat image every hour from a remote source as a device wallpaper.
 
 Sensor List: Gathers a list of all hardware sensors available on the device, and displays the values that they produce in real time.
@@ -32,3 +34,5 @@ Street View: Implements the new Google Street View feature.
 Video Player: Native video player for playing remote content.
 
 Wear: Examples of possible notifications using the Google Wear developer preview.
+
+WearCustomWatchFace: Creates a custom watch face for the Android Wear with a settings activity. Uses an undocumented API, but I'll have a sample up when an official API is available.
