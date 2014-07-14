@@ -37,6 +37,8 @@ Wear: Examples of possible notifications using the Google Wear developer preview
 
 WearCustomWatchFace: Creates a custom watch face for the Android Wear with a settings activity. Uses an undocumented API, but I'll have a sample up when an official API is available.
 
+------------------------------------------------------------------------------------------------
+
 License
 Copyright 2014 Paul Trebilcox-Ruiz
 
