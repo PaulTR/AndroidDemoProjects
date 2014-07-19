@@ -1,0 +1,9 @@
+<resources>
+    <color name="background_gradient_start">@android:color/black</color>
+    <color name="background_gradient_end">#AAAAAA</color>
+    <color name="default_background">#AAAAAA</color>
+
+    <color name="fastlane_background">#000000</color>
+    <color name="detail_background">#AAAAAA</color>
+    <color name="search_button_color">@android:color/black</color>
+</resources>

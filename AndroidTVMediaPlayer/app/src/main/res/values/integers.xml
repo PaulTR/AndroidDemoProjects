@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="card_presenter_width">245</integer>
+    <integer name="card_presenter_height">438</integer>
+    <integer name="detail_thumbnail_square_size">274</integer>
+    <integer name="time_to_hide_controller">5000</integer>
+    <integer name="seekbar_delay_time">100</integer>
+    <integer name="seekbar_interval_time">1000</integer>
+    <integer name="min_scrub_time">3000</integer>
+    <integer name="scrub_segment_divisor">30</integer>
+    <integer name="preference_square_size">200</integer>
+</resources>
