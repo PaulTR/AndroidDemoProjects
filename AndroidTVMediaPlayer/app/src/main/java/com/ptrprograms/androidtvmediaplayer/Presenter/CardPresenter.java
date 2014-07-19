@@ -32,7 +32,7 @@ public class CardPresenter extends Presenter {
         protected void updateCardViewImage( Context context, String link ) {
             Picasso.with( context )
                     .load(link)
-                    .resize( mCardView.getResources().getInteger( R.integer.card_presenter_width ), mCardView.getResources().getInteger(R.integer.card_presenter_height) )
+                    .resize( mCardView.getResources().getInteger( R.integer.card_presenter_width ), mCardView.getResources().getInteger( R.integer.card_presenter_height ) )
                     .centerCrop()
                     .error( R.drawable.default_background )
                     .into( mImageCardViewTarget );

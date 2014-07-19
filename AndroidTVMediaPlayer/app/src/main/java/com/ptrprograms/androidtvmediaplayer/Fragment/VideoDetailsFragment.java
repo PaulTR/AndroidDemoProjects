@@ -17,8 +17,6 @@ import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.OnActionClickedListener;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -46,7 +44,7 @@ public class VideoDetailsFragment extends DetailsFragment {
 
     private static final int ACTION_WATCH = 1;
 
-    private Movie selectedMovie;
+    private Movie mSelectedMovie;
 
     private Target mBackgroundTarget;
     private DisplayMetrics mMetrics;
@@ -55,10 +53,10 @@ public class VideoDetailsFragment extends DetailsFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        selectedMovie = (Movie) getActivity().getIntent().getSerializableExtra( EXTRA_MOVIE );
+        mSelectedMovie = (Movie) getActivity().getIntent().getSerializableExtra( EXTRA_MOVIE );
 
         initBackground();
-        new DetailRowBuilderTask().execute( selectedMovie );
+        new DetailRowBuilderTask().execute( mSelectedMovie );
 
     }
 
@@ -70,9 +68,9 @@ public class VideoDetailsFragment extends DetailsFragment {
         mMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(mMetrics);
 
-        if( selectedMovie != null && !TextUtils.isEmpty( selectedMovie.getBackgroundImageUrl() ) ) {
+        if( mSelectedMovie != null && !TextUtils.isEmpty( mSelectedMovie.getBackgroundImageUrl() ) ) {
             try {
-                updateBackground(new URI(selectedMovie.getBackgroundImageUrl()));
+                updateBackground(new URI(mSelectedMovie.getBackgroundImageUrl()));
             } catch (URISyntaxException e) { }
         }
     }
@@ -95,20 +93,19 @@ public class VideoDetailsFragment extends DetailsFragment {
 
     private class DetailRowBuilderTask extends AsyncTask<Movie, Integer, DetailsOverviewRow> {
         @Override
-        protected DetailsOverviewRow doInBackground(Movie... movies) {
-            Log.e( "VideoDetailsFragment", "doInBackground" );
-            selectedMovie = movies[0];
+        protected DetailsOverviewRow doInBackground( Movie... movies ) {
+            mSelectedMovie = movies[0];
             DetailsOverviewRow row = null;
             try {
-                row = new DetailsOverviewRow(selectedMovie);
+                row = new DetailsOverviewRow( mSelectedMovie );
                 Bitmap poster = Picasso.with( getActivity() )
-                        .load( selectedMovie.getCardImageUrl() )
-                        .resize(Utils.dpToPx( getActivity().getResources().getInteger( R.integer.detail_thumbnail_square_size ), getActivity().getApplicationContext()),
-                                Utils.dpToPx( getActivity().getResources().getInteger( R.integer.detail_thumbnail_square_size ), getActivity().getApplicationContext()))
+                        .load( mSelectedMovie.getCardImageUrl() )
+                        .resize(Utils.dpToPx( getActivity().getResources().getInteger( R.integer.detail_thumbnail_square_size ), getActivity().getApplicationContext() ),
+                                Utils.dpToPx( getActivity().getResources().getInteger( R.integer.detail_thumbnail_square_size ), getActivity().getApplicationContext() ) )
                         .centerCrop()
                         .get();
-                row.setImageBitmap(getActivity(), poster);
-            } catch (IOException e) {
+                row.setImageBitmap( getActivity(), poster );
+            } catch ( IOException e ) {
                 getActivity().finish();
                 return null;
             } catch( NullPointerException e ) {
@@ -123,43 +120,37 @@ public class VideoDetailsFragment extends DetailsFragment {
         }
 
         @Override
-        protected void onPostExecute(DetailsOverviewRow detailRow) {
-            Log.e( "VideoDetailsFragment", "onPostExecute" );
+        protected void onPostExecute( DetailsOverviewRow detailRow ) {
             if( detailRow == null )
                 return;
 
-            Log.e( "VideoDetailsFragment", "detailRow != null" );
-
             ClassPresenterSelector ps = new ClassPresenterSelector();
             DetailsOverviewRowPresenter dorPresenter =
-                    new DetailsOverviewRowPresenter(new DetailsDescriptionPresenter());
+                    new DetailsOverviewRowPresenter( new DetailsDescriptionPresenter() );
             // set detail background and style
             dorPresenter.setBackgroundColor( getResources().getColor( R.color.detail_background ) );
             dorPresenter.setStyleLarge( true );
             dorPresenter.setOnActionClickedListener( new OnActionClickedListener() {
                 @Override
-                public void onActionClicked(Action action) {
+                public void onActionClicked( Action action ) {
                     if (action.getId() == ACTION_WATCH ) {
                         Intent intent = new Intent( getActivity(), PlayerActivity.class );
-                        intent.putExtra( EXTRA_MOVIE, selectedMovie);
-                        intent.putExtra( EXTRA_SHOULD_AUTO_START, true);
-                        startActivity(intent);
-                    }
-                    else {
-                        Toast.makeText(getActivity(), action.toString(), Toast.LENGTH_SHORT).show();
+                        intent.putExtra( EXTRA_MOVIE, mSelectedMovie );
+                        intent.putExtra( EXTRA_SHOULD_AUTO_START, true );
+                        startActivity( intent );
                     }
                 }
             });
 
-            ps.addClassPresenter(DetailsOverviewRow.class, dorPresenter);
-            ps.addClassPresenter(ListRow.class,
-                    new ListRowPresenter());
+            ps.addClassPresenter( DetailsOverviewRow.class, dorPresenter );
+            ps.addClassPresenter( ListRow.class,
+                    new ListRowPresenter() );
 
 
-            ArrayObjectAdapter adapter = new ArrayObjectAdapter(ps);
-            adapter.add(detailRow);
+            ArrayObjectAdapter adapter = new ArrayObjectAdapter( ps );
+            adapter.add( detailRow );
             loadRelatedMedia( adapter );
-            setAdapter(adapter);
+            setAdapter( adapter );
         }
 
         private void loadRelatedMedia( ArrayObjectAdapter adapter ) {
@@ -170,7 +161,7 @@ public class VideoDetailsFragment extends DetailsFragment {
             List<Movie> movies = gson.fromJson( json, collection );
             List<Movie> related = new ArrayList<Movie>();
             for( Movie movie : movies ) {
-                if( movie.getCategory().equals( selectedMovie.getCategory() ) ) {
+                if( movie.getCategory().equals( mSelectedMovie.getCategory() ) ) {
                     related.add( movie );
                 }
             }

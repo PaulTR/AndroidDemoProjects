@@ -29,7 +29,6 @@ import com.ptrprograms.androidtvmediaplayer.Util.Utils;
 
 public class MainFragment extends BrowseFragment {
 
-    CardPresenter mCardPresenter;
     private List<Movie> mMovies = new ArrayList<Movie>();
 
     @Override
@@ -51,15 +50,15 @@ public class MainFragment extends BrowseFragment {
 
     private void loadRows() {
 
-        ArrayObjectAdapter rowsAdapter = new ArrayObjectAdapter(new ListRowPresenter());
-        mCardPresenter = new CardPresenter();
+        ArrayObjectAdapter rowsAdapter = new ArrayObjectAdapter( new ListRowPresenter() );
+        CardPresenter cardPresenter = new CardPresenter();
 
         List<String> categories = getCategories();
         if( categories == null || categories.isEmpty() )
             return;
 
         for( String category : categories ) {
-            ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter( mCardPresenter );
+            ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter( cardPresenter );
             for( Movie movie : mMovies ) {
                 if( category.equalsIgnoreCase( movie.getCategory() ) )
                     listRowAdapter.add( movie );
@@ -71,7 +70,7 @@ public class MainFragment extends BrowseFragment {
         }
 
         setupPreferences( rowsAdapter );
-        setAdapter(rowsAdapter);
+        setAdapter( rowsAdapter );
 
     }
 
