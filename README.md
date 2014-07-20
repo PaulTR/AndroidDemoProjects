@@ -1,5 +1,9 @@
+Tutorials for these projects can be found at http://ptrprograms.blogspot.com/
+
 AndroidDemoProjects
 ===================
+
+AndroidTVMediaPlayer: A demo media project for the AndroidTV.
 
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
 
