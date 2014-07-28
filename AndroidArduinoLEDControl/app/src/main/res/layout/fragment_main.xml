@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/red_led_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+    <SeekBar
+        android:id="@+id/red_led_seek_bar"
+        android:max="255"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/red_led_value"/>
+    <TextView
+        android:id="@+id/green_led_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/red_led_seek_bar"
+        android:paddingTop="12dp"
+        android:gravity="center"/>
+    <SeekBar
+        android:id="@+id/green_led_seek_bar"
+        android:max="255"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/green_led_value"/>
+    <TextView
+        android:id="@+id/blue_led_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/green_led_seek_bar"
+        android:paddingTop="12dp"
+        android:gravity="center"/>
+    <SeekBar
+        android:id="@+id/blue_led_seek_bar"
+        android:max="255"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blue_led_value"/>
+
+</RelativeLayout>
