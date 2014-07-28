@@ -3,6 +3,8 @@ Tutorials for these projects can be found at http://ptrprograms.blogspot.com/
 AndroidDemoProjects
 ===================
 
+AndroidArduinoLEDControl: Android project and Arduino sketch file for controlling 3 different LEDs attached to an Arduino board from an Android device.
+
 AndroidTVMediaPlayer: A demo media project for the AndroidTV.
 
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
