@@ -15,6 +15,10 @@ public class ColorTransformation implements Transformation {
 
     private int color = 0;
 
+    public ColorTransformation() {
+
+    }
+    
     public ColorTransformation( int color ) {
         setColor( color );
     }
