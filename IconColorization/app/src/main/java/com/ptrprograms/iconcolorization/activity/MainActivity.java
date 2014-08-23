@@ -51,9 +51,19 @@ public class MainActivity extends ActionBarActivity {
         mDrawableUrlImage = (ImageView) findViewById( R.id.url_drawable );
         mDrawableUrlTransformedImage = (ImageView) findViewById( R.id.transformed_url_drawable );
 
-        Picasso.with( this ).load( R.drawable.ic_star ).transform( new ColorTransformation(getResources().getColor( R.color.local_drawable_color ) ) ).into( mDrawableTransformedImage );
-        Picasso.with( this ).load( getString( R.string.image_url ) ).into( mDrawableUrlImage );
-        Picasso.with( this ).load( getString( R.string.image_url ) ).transform( new ColorTransformation( getResources().getColor( R.color.remote_image_color ) ) ).into( mDrawableUrlTransformedImage );
+        Picasso.with( this )
+                .load( R.drawable.ic_star )
+                .transform( new ColorTransformation(getResources().getColor( R.color.local_drawable_color ) ) )
+                .into( mDrawableTransformedImage );
+
+        Picasso.with( this )
+                .load( getString( R.string.image_url ) )
+                .into( mDrawableUrlImage );
+
+        Picasso.with( this )
+                .load( getString( R.string.image_url ) )
+                .transform( new ColorTransformation( getResources().getColor( R.color.remote_image_color ) ) )
+                .into( mDrawableUrlTransformedImage );
 
         if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB )
             Picasso.with( this ).load( R.drawable.ic_star ).transform( new ColorTransformation( getResources().getColor( R.color.action_bar_icon_color ) ) ).into(ActionBarIconTarget);

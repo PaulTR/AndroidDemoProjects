@@ -18,7 +18,7 @@ public class ColorTransformation implements Transformation {
     public ColorTransformation() {
 
     }
-    
+
     public ColorTransformation( int color ) {
         setColor( color );
     }
