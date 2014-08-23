@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IconColorization</string>
+
+    <string name="image_url">https://cdn1.iconfinder.com/data/icons/simple-icons/128/android-128-black.png</string>
+
+    <string name="label_normal_drawable">Normal Drawable</string>
+    <string name="label_transformed_drawable">Transformed Local Drawable</string>
+    <string name="label_normal_url_drawable">URL Drawable</string>
+    <string name="label_transformed_url_drawable">Transformed URL Drawable</string>
+</resources>

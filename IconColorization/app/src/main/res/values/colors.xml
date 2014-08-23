@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="local_drawable_color">#00FF00</color>
+    <color name="remote_image_color">#FF0000</color>
+    <color name="action_bar_icon_color">#00FFFF</color>
+</resources>
