@@ -65,7 +65,10 @@ public class MainActivity extends ActionBarActivity {
                 .transform( new ColorTransformation( getResources().getColor( R.color.remote_image_color ) ) )
                 .into( mDrawableUrlTransformedImage );
 
-        Picasso.with( this ).load( R.drawable.ic_star ).transform( new ColorTransformation( getResources().getColor( R.color.action_bar_icon_color ) ) ).into(ActionBarIconTarget);
+        Picasso.with( this )
+                .load( R.drawable.ic_star )
+                .transform( new ColorTransformation( getResources().getColor( R.color.action_bar_icon_color ) ) )
+                .into( ActionBarIconTarget );
     }
 
 }
