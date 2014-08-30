@@ -38,13 +38,12 @@ public class SharedElementAnimationActivity extends Activity implements View.OnC
     public void onClick(View view) {
         if( view.getId() == R.id.button ) {
             Intent intent = new Intent( this, SharedElementSecondAnimationActivity.class );
-            intent.putExtra( "image", R.drawable.ic_launcher );
+
             ((ViewGroup) mImageView.getParent()).setTransitionGroup( false );
 
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             ( (BitmapDrawable) mImageView.getDrawable() ).getBitmap().compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-            intent.putExtra( "image", byteArray );
+            intent.putExtra( "image", stream.toByteArray() );
 
             ActivityOptions options;
 

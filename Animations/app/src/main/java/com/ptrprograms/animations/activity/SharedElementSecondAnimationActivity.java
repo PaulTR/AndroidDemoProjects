@@ -15,15 +15,15 @@ import com.ptrprograms.animations.R;
  */
 public class SharedElementSecondAnimationActivity extends Activity {
 
-    ImageView mImageView;
+    private ImageView mImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shared_element_second_animation);
         mImageView = (ImageView) findViewById( R.id.image );
+
         byte[] byteArray = getIntent().getByteArrayExtra("image");
         Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-        //Bitmap bitmap = SharedElementAnimationActivity.sPhotoCache.get( getIntent().getIntExtra("image", R.drawable.ic_launcher) );
         mImageView.setImageBitmap(bitmap);
     }
 
