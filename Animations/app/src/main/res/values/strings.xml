@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Animations</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_circular_reveal">Circular Reveal Activity</string>
+    <string name="title_activity_explode_animation">Explode Animation Activity</string>
+    <string name="title_activity_fade_animation">Fade Animation Activity</string>
+    <string name="title_activity_sliding_animation">Sliding Animation Activity</string>
+    <string name="title_activity_shared_element_animation">Shared Element Animation Activity</string>
+    <string name="title_activity_shared_element_animation_second">Shared Element Second Animation Activity</string>
+
+</resources>

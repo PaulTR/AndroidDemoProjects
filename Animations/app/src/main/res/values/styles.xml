@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.Base" parent="android:Theme.Material">
+        <item name="android:colorControlHighlight">#0000AA</item>
+        <item name="android:navigationBarColor">#0000AA</item>
+        <item name="android:colorPrimaryDark">#0000AA</item>
+        <item name="android:colorPrimary">#0000FF</item>
+        <item name="android:colorAccent">#00FF00</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowExitTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/changebounds</item>
+        <item name="android:windowSharedElementExitTransition">@transition/changebounds</item>
+    </style>
+</resources>

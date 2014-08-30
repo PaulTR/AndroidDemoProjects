@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ptrprograms.animations" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.Base" >
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.CircularRevealActivity"
+            android:label="@string/title_activity_circular_reveal"/>
+
+        <activity
+            android:name=".activity.ExplodeAnimationActivity"
+            android:label="@string/title_activity_explode_animation" />
+        <activity
+            android:name=".activity.FadeAnimationActivity"
+            android:label="@string/title_activity_fade_animation" >
+        </activity>
+        <activity
+            android:name=".activity.SlidingAnimationActivity"
+            android:label="@string/title_activity_sliding_animation" >
+        </activity>
+        <activity
+            android:name=".activity.SharedElementAnimationActivity"
+            android:label="@string/title_activity_shared_element_animation" >
+        </activity>
+
+        <activity
+            android:name=".activity.SharedElementSecondAnimationActivity"
+            android:label="@string/title_activity_shared_element_animation_second" >
+        </activity>
+    </application>
+
+</manifest>
