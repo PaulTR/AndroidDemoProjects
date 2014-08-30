@@ -1,11 +1,9 @@
 package com.ptrprograms.animations.activity;
 
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.ptrprograms.animations.R;

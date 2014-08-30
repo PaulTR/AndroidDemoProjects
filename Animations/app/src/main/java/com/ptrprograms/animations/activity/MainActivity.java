@@ -50,6 +50,7 @@ public class MainActivity extends Activity implements Transition.TransitionListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        getWindow().getEnterTransition().removeListener( this );
+        if( getWindow() != null && getWindow().getEnterTransition() != null )
+            getWindow().getEnterTransition().removeListener( this );
     }
 }
