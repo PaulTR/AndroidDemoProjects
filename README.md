@@ -7,6 +7,8 @@ AndroidArduinoLEDControl: Android project and Arduino sketch file for controllin
 
 AndroidTVMediaPlayer: A demo media project for the AndroidTV.
 
+Animations: Example of using the new animation features in Android L. Goes over ripples, animated UI widgets, circular reveal, activity transitions and shared element activity transitions.
+
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
 
 Flashlight: Can't be an Android developer without making a flashlight app, right?
@@ -18,6 +20,8 @@ Gallery: Displays a grid of thumbnails that can be clicked to show a larger vers
 GeoFencing: Demo of creating a geofence and posting a notification whenever a user enters or exits the area.
 
 Google Maps: Basic implementation of the Google Maps fragment that allows the user to place markers and display street addresses.
+
+IconColorization: Goes over using Picasso to change the color of drawables programatically.
 
 NavigationDrawer: An example of using the navigation drawer in an activity to load fragments. Also an example of Square's Otto library for firing events from a list to the activity.
 
