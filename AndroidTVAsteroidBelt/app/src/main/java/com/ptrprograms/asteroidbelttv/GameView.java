@@ -6,20 +6,19 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.hardware.input.InputManager.InputDeviceListener;
 import android.opengl.Matrix;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
 import com.ptrprograms.asteroidbelttv.Objects.Asteroid;
+import com.ptrprograms.asteroidbelttv.Objects.Bullet;
 import com.ptrprograms.asteroidbelttv.Objects.Ship;
-import com.ptrprograms.asteroidbelttv.Particles.BaseParticle;
-import com.ptrprograms.asteroidbelttv.Particles.ParticleSystem;
 import com.ptrprograms.asteroidbelttv.Utils.Constants;
 import com.ptrprograms.asteroidbelttv.Utils.ShapeBuffer;
 import com.ptrprograms.asteroidbelttv.Utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -40,9 +39,8 @@ public class GameView extends GLSurfaceView implements GLSurfaceView.Renderer, I
     private int mWindowWidth;
     private int mWindowHeight;
     private List<Asteroid> mAsteroids;
-    private static final int MAX_BULLET_PARTICLES = 100;
-
-    private static ParticleSystem mShots;
+    public List<Bullet> mBullets;
+    private int mLevel = 1;
 
     private final float[] mMVPMatrix = new float[16];
 
@@ -57,16 +55,13 @@ public class GameView extends GLSurfaceView implements GLSurfaceView.Renderer, I
 
         mLastUpdateTimeMillis = System.currentTimeMillis();
 
-        mShip = new Ship( this, Utils.Color.WHITE );
+        mShip = new Ship();
 
         InputManager inputManager = (InputManager) context.getSystemService( Context.INPUT_SERVICE );
         inputManager.registerInputDeviceListener( this, null );
         mAsteroids = new ArrayList<Asteroid>();
-
-        mShots = new ParticleSystem(MAX_BULLET_PARTICLES, true);
-
+        mBullets = new ArrayList<Bullet>();
         initLevel();
-
     }
 
     public static GameView getInstance() {
@@ -74,25 +69,64 @@ public class GameView extends GLSurfaceView implements GLSurfaceView.Renderer, I
     }
 
     private void initLevel() {
-        for( int i = 0; i < 1; i++ ) {
-            mAsteroids.add(new Asteroid(Utils.Color.RED, Constants.ASTEROID_SIZE_LARGE));
-            mAsteroids.add( new Asteroid(Utils.Color.RED, Constants.ASTEROID_SIZE_MEDIUM) );
-            mAsteroids.add( new Asteroid(Utils.Color.RED, Constants.ASTEROID_SIZE_SMALL) );
+        mShip.reset();
+        if( mBullets != null ) {
+            ListIterator<Bullet> iter = mBullets.listIterator();
+            while( iter.hasNext() ) {
+                iter.next();
+                iter.remove();
+            }
+        }
+        for( int i = 0; i < mLevel + 2; i++ ) {
+            mAsteroids.add( new Asteroid(Utils.Color.RED, Constants.ASTEROID_SIZE_LARGE));
         }
     }
 
     private void update( float delta ) {
+        if( mAsteroids.isEmpty() ) {
+            mLevel++;
+            initLevel();
+            return;
+        }
+
         mShip.update( delta );
-        BaseParticle bullet = null;
         for( Asteroid asteroid : mAsteroids ) {
             asteroid.update( delta );
-            bullet = mShots.checkForCollision( asteroid.mPositionX, asteroid.mPositionY, Constants.ASTEROID_SIZE_LARGE );
-            if( bullet != null ) {
-                Log.e("ASTEROIDS", "bullet hit something" );
-                bullet = null;
+        }
+
+        ListIterator<Bullet> bulletIter = mBullets.listIterator();
+        ListIterator<Asteroid> asteroidIter = mAsteroids.listIterator();
+        Bullet bullet;
+        Asteroid asteroid;
+
+        while( bulletIter.hasNext() ) {
+            bullet = bulletIter.next();
+            bullet.update( delta );
+            if( bullet.mLifeTimer == 0 ) {
+                bulletIter.remove();
             }
         }
-        mShots.update( delta );
+
+        while( asteroidIter.hasNext() ) {
+            asteroid = asteroidIter.next();
+            bulletIter = mBullets.listIterator();
+            while( bulletIter.hasNext() ) {
+                bullet = bulletIter.next();
+                if ((bullet.mPositionX > asteroid.mPositionX && bullet.mPositionX < (asteroid.mPositionX + (2 * asteroid.mAsteroidSize))
+                        && (bullet.mPositionY > asteroid.mPositionY && bullet.mPositionY < (asteroid.mPositionY + (2 * asteroid.mAsteroidSize))))) {
+                    bulletIter.remove();
+                    asteroidIter.remove();
+                    if (asteroid.mAsteroidSize == Constants.ASTEROID_SIZE_LARGE) {
+                        asteroidIter.add(new Asteroid(Utils.Color.RED, Constants.ASTEROID_SIZE_MEDIUM, asteroid.mPositionX, asteroid.mPositionY));
+                        asteroidIter.add(new Asteroid(Utils.Color.RED, Constants.ASTEROID_SIZE_MEDIUM, asteroid.mPositionX, asteroid.mPositionY));
+                    } else if (asteroid.mAsteroidSize == Constants.ASTEROID_SIZE_MEDIUM) {
+                        asteroidIter.add(new Asteroid(Utils.Color.RED, Constants.ASTEROID_SIZE_SMALL, asteroid.mPositionX, asteroid.mPositionY));
+                        asteroidIter.add(new Asteroid(Utils.Color.RED, Constants.ASTEROID_SIZE_SMALL, asteroid.mPositionX, asteroid.mPositionY));
+                    }
+                    break;
+                }
+            }
+        }
     }
 
     @Override
@@ -161,25 +195,21 @@ public class GameView extends GLSurfaceView implements GLSurfaceView.Renderer, I
     }
 
     public void draw() {
-        // Each world element adds triangles to the shape buffer.  No OpenGl calls are made
-        // until after the whole scene has been added to the shape buffer.
         mShapeBuffer.clear();
-        if (mShip.isActive()) {
-            mShip.draw(mShapeBuffer);
-        }
+        mShip.draw(mShapeBuffer);
         for( Asteroid asteroid : mAsteroids ) {
             asteroid.draw( mShapeBuffer );
         }
-        mShots.draw( mShapeBuffer );
-        // Prepare for rendering to the screen.
+        for( Bullet bullet : mBullets ) {
+            bullet.draw( mShapeBuffer );
+        }
+
         updateViewportAndProjection();
 
-        // Send the triangles to OpenGl.
         mShapeBuffer.draw( mMVPMatrix );
     }
 
     private void updateViewportAndProjection() {
-        // Assume a square viewport if the width and height haven't been initialized.
         float viewportAspectRatio = 1.0f;
         if ((mWindowWidth > 0) && (mWindowHeight > 0)) {
             viewportAspectRatio = (float) mWindowWidth / (float) mWindowHeight;
@@ -236,9 +266,5 @@ public class GameView extends GLSurfaceView implements GLSurfaceView.Renderer, I
             return true;
         }
         return false;
-    }
-
-    public static ParticleSystem getShots() {
-        return mShots;
     }
 }

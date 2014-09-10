@@ -1,17 +1,5 @@
 /*
- * Copyright 2014 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Originally found and modified from here: https://github.com/googlesamples/androidtv-GameController/blob/master/GameControllerSample/src/main/java/com/google/fpl/gamecontroller/GamepadController.java
  */
 
 package com.ptrprograms.asteroidbelttv.Utils;
@@ -29,7 +17,11 @@ public class GamepadController {
     public static final int BUTTON_B = 1;
     public static final int BUTTON_X = 2;
     public static final int BUTTON_Y = 3;
-    public static final int BUTTON_COUNT = 4;
+    public static final int BUTTON_R1 = 4;
+    public static final int BUTTON_R2 = 5;
+    public static final int BUTTON_L1 = 6;
+    public static final int BUTTON_L2 = 7;
+    public static final int BUTTON_COUNT = 8;
 
     // The axes for joystick movement.
     public static final int AXIS_X = 0;
@@ -80,33 +72,6 @@ public class GamepadController {
     }
 
     /**
-     * @return The id of the associated controller device, or -1 if not assigned a device.
-     */
-    public int getDeviceId() {
-        return mDeviceId;
-    }
-    /**
-     * Sets the physical device id for this controller.
-     *
-     * @param newId The physical device id, or -1 to indicate no assigned physical device.
-     */
-    public void setDeviceId(int newId) {
-        if (newId != mDeviceId) {
-            mDeviceId = newId;
-            if (newId != -1) {
-                // Reset our button and axis state when a new physical device is attached.
-                resetState();
-            }
-        }
-    }
-    /**
-     * @return true if this controller is assigned a physical device id.
-     */
-    public boolean isActive() {
-        return mDeviceId != -1;
-    }
-
-    /**
      * Returns the position of a joystick along a single axis.
      *
      * @param joystickIndex One of: JOYSTICK_1 or JOYSTICK_2.
@@ -128,38 +93,13 @@ public class GamepadController {
         return mButtonState[buttonId][FRAME_INDEX_CURRENT];
     }
 
-    /**
-     * Returns true if a button is down now, but wasn't last frame.
-     *
-     * @param buttonId One of: BUTTON_A, BUTTON_B, BUTTON_X, or BUTTON_Y.
-     * @return true if a button is down now, but wasn't last frame.
-     */
-    public boolean wasButtonPressed(int buttonId) {
-        // Returns true if it's down now, but wasn't last frame.
-        return mButtonState[buttonId][FRAME_INDEX_CURRENT]
-                && !mButtonState[buttonId][FRAME_INDEX_PREVIOUS];
-    }
-
-    /**
-     * Returns true if it's up now, but wasn't last frame.
-     *
-     * @param buttonId One of: BUTTON_A, BUTTON_B, BUTTON_X, or BUTTON_Y.
-     * @return true if it's up now, but wasn't last frame.
-     */
-    public boolean wasButtonReleased(int buttonId) {
-        return !mButtonState[buttonId][FRAME_INDEX_CURRENT]
-                && mButtonState[buttonId][FRAME_INDEX_PREVIOUS];
-    }
-
-    /**
-     * Tells the controller to start tracking events for the next frame.
-     */
-    public void advanceFrame() {
-        // Copy the current button state to the previous frame.
-        // We can't just toggle between both buffers because the buttons only update
-        // when an event occurs (press or release), and not every frame.
-        for (int i = 0; i < BUTTON_COUNT; i++) {
-            mButtonState[i][FRAME_INDEX_PREVIOUS] = mButtonState[i][FRAME_INDEX_CURRENT];
+    public void setDeviceId(int newId) {
+        if (newId != mDeviceId) {
+            mDeviceId = newId;
+            if (newId != -1) {
+                // Reset our button and axis state when a new physical device is attached.
+                resetState();
+            }
         }
     }
 
@@ -190,6 +130,14 @@ public class GamepadController {
             mButtonState[BUTTON_X][FRAME_INDEX_CURRENT] = keyIsDown;
         } else if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_BUTTON_Y) {
             mButtonState[BUTTON_Y][FRAME_INDEX_CURRENT] = keyIsDown;
+        } else if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_BUTTON_R1 ) {
+            mButtonState[BUTTON_R1][FRAME_INDEX_CURRENT] = keyIsDown;
+        } else if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_BUTTON_R2 ) {
+            mButtonState[BUTTON_R2][FRAME_INDEX_CURRENT] = keyIsDown;
+        } else if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_BUTTON_L1 ) {
+            mButtonState[BUTTON_L1][FRAME_INDEX_CURRENT] = keyIsDown;
+        } else if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_BUTTON_L2 ) {
+            mButtonState[BUTTON_L2][FRAME_INDEX_CURRENT] = keyIsDown;
         }
     }
 }

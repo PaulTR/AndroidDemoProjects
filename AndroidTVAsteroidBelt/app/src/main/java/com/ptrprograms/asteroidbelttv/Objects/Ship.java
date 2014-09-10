@@ -1,10 +1,7 @@
 package com.ptrprograms.asteroidbelttv.Objects;
 
-import android.util.Log;
-
-import com.ptrprograms.asteroidbelttv.Particles.BaseParticle;
-import com.ptrprograms.asteroidbelttv.Utils.Constants;
 import com.ptrprograms.asteroidbelttv.GameView;
+import com.ptrprograms.asteroidbelttv.Utils.Constants;
 import com.ptrprograms.asteroidbelttv.Utils.GamepadController;
 import com.ptrprograms.asteroidbelttv.Utils.ShapeBuffer;
 import com.ptrprograms.asteroidbelttv.Utils.Utils;
@@ -14,21 +11,15 @@ import com.ptrprograms.asteroidbelttv.Utils.Utils;
  */
 public class Ship {
 
-    //private GameView mGameView;
     private final GamepadController mController = new GamepadController();
-
-    private static final float[] SHIP_SHAPE = {
-            -1.0f,  0.5f,
-            -1.0f, -0.5f,
-            1.0f,   0.0f
-    };
 
     private static final float SHIP_SIZE = 5.0f;
     private static final float DRAG = 0.05f;
     private static final float MINIMUM_VELOCITY = 0.05f;
+    private static final int FIRE_REFRESH_TIMER = 10;//frames
 
-    private float mHeadingX = 0.0f;
-    private float mHeadingY = 1.0f;
+    private float mHeadingX;
+    private float mHeadingY;
     private float mVelocityX;
     private float mVelocityY;
     private float mVelocityMultiplier = 1.5f;
@@ -38,27 +29,20 @@ public class Ship {
 
     private int mFireTimer = 0;
 
-    private boolean mJoystickAiming;
-
-    private static final float BULLET_SPEED_BASEGUN = 2.5f;
-    private static final float BULLET_LIFETIME_IN_SECONDS = 5.0f;
-    private static final float BULLET_PARTICLE_SIZE = 0.75f;
-    private static final float BULLET_PARTICLE_ASPECT_RATIO = 3.0f;
-    private static final float BULLET_PARTICLE_INITIAL_POSITION_INCREMENT = 3.0f;
     private float mAimX, mAimY;
-    private static final float GUN_FIREDELAY_BASEGUN = 0.25f;
-    private float mGunRechargeTimer;
 
 
-    private Utils.Color mColor = new Utils.Color();
+    private Utils.Color mColor = Utils.Color.WHITE;
 
-    public Ship( GameView gameView, Utils.Color color) {
-        //this.mGameView = gameView;
-        this.mHeadingX = 0.0f;
-        this.mHeadingY = 1.0f;
-        this.mColor.set(color);
+    public Ship() {
+        reset();
+    }
 
-        mRespawnTimer = 1.0f;
+    public void reset() {
+        setVelocity(0.0f, 0.0f);
+        setPosition( 0.0f, 0.0f );
+        setHeadingX( 0.0f );
+        setHeadingY( 1.0f );
     }
 
     public void draw( ShapeBuffer sb) {
@@ -66,27 +50,55 @@ public class Ship {
             return;
         }
 
-        sb.add2DShape(mPositionX, mPositionY, mColor, SHIP_SHAPE, SHIP_SIZE, SHIP_SIZE,
+        sb.add2DShape( mPositionX, mPositionY, mColor, getShipVerticies(), SHIP_SIZE, SHIP_SIZE,
                 mHeadingX, mHeadingY);
 
     }
 
-    public void setPositionX( float positionX ) {
-        if( Constants.MAP_LEFT_COORDINATE - SHIP_SIZE < positionX && positionX < Constants.MAP_RIGHT_COORDINATE + SHIP_SIZE ) {
-            mPositionX = positionX;
-        } else if( positionX > Constants.MAP_RIGHT_COORDINATE ) {
+    private float[] getShipVerticies() {
+        float verticies[] = {
+                -1.0f, 0.5f,
+                -1.0f, -0.5f,
+                1.0f, 0.0f
+        };
+
+        return verticies;
+    }
+
+    public void setVelocity( float velX, float velY ) {
+        setVelocityX( velX );
+        setVelocityY( velY );
+    }
+
+    public void setVelocityX( float vel ) {
+        mVelocityX = vel * mVelocityMultiplier;
+    }
+
+    public void setVelocityY( float vel ) {
+        mVelocityY = vel * mVelocityMultiplier;
+    }
+
+    public void setPosition( float posX, float posY ) {
+        setPositionX( posX );
+        setPositionY( posY );
+    }
+
+    public void setPositionX( float position ) {
+        if( Utils.isInXPlane( position, SHIP_SIZE ) ) {
+            mPositionX = position;
+        } else if( Utils.isOffScreenToRight(position, SHIP_SIZE) ) {
             mPositionX = Constants.MAP_LEFT_COORDINATE;
-        } else if( positionX < Constants.MAP_LEFT_COORDINATE ) {
+        } else if( Utils.isOffScreenToLeft( position, SHIP_SIZE ) ) {
             mPositionX = Constants.MAP_RIGHT_COORDINATE;
         }
     }
 
-    public void setPositionY( float positionY ) {
-        if( Constants.MAP_BOTTOM_COORDINATE - SHIP_SIZE < positionY && positionY < Constants.MAP_TOP_COORDINATE + SHIP_SIZE ) {
-            mPositionY = positionY;
-        } else if( positionY > Constants.MAP_TOP_COORDINATE + SHIP_SIZE ) {
+    public void setPositionY( float position ) {
+        if( Utils.isInYPlane( position, SHIP_SIZE ) ) {
+            mPositionY = position;
+        } else if( Utils.isOffScreenAboveTop( position, SHIP_SIZE ) ) {
             mPositionY = Constants.MAP_BOTTOM_COORDINATE;
-        } else if( positionY < Constants.MAP_BOTTOM_COORDINATE - SHIP_SIZE ) {
+        } else if( Utils.isOffScreenBelowBottom( position, SHIP_SIZE ) ) {
             mPositionY = Constants.MAP_TOP_COORDINATE;
         }
     }
@@ -114,11 +126,6 @@ public class Ship {
         return ( mRespawnTimer <= 0.0f );
     }
 
-    public boolean isActive() {
-        //return mController.isActive();
-        return true;
-    }
-
     private void updateSpawningStatus( float delta ) {
         if (mRespawnTimer > 0.0f) {
             mRespawnTimer -= delta;
@@ -133,6 +140,7 @@ public class Ship {
         }
     }
 
+    //Determines velocity by getting direction and magnitude from the joystick controller
     private void updateShipPosition(float frameDelta) {
         float newHeadingX = mController.getJoystickPosition(GamepadController.JOYSTICK_1,
                 GamepadController.AXIS_X);
@@ -140,89 +148,48 @@ public class Ship {
                 GamepadController.AXIS_Y);
 
         float magnitude = Utils.vector2DLength(newHeadingX, newHeadingY);
+
+        //Joystick being used at least a little bit
         if (magnitude > GamepadController.JOYSTICK_MOVEMENT_THRESHOLD) {
-            // Normalize the direction vector.
+            //Get the heading divided by how much the joystick is being used
             mHeadingX = newHeadingX / magnitude;
             mHeadingY = -newHeadingY / magnitude;
 
-            // Compute the new speed.
-            mVelocityX = newHeadingX;
-            mVelocityY = -newHeadingY;
-
-            mVelocityX *= mVelocityMultiplier;
-            mVelocityY *= mVelocityMultiplier;
+            setVelocity( newHeadingX, -newHeadingY );
 
             if (magnitude > 1.0f) {
-                // Limit the max speed to "1".  If the movement joystick is moved less than
-                // 1 unit from the center, the ship will move less than it's maximum speed.
-                // If the joystick moves more than 1 unit from the center, dividing by
-                // magnitude will limit the speed of the ship, but keep the direction of moment
-                // correct.
+                //Sets a cap velocity
                 mVelocityX /= magnitude;
                 mVelocityY /= magnitude;
             }
         }
 
-        setPositionX(mPositionX + mVelocityX * frameDelta);
-        setPositionY(mPositionY + mVelocityY * frameDelta);
+        setPosition( mPositionX + mVelocityX * frameDelta, mPositionY + mVelocityY * frameDelta );
 
         // Use drag so that the ship will coast to a stop after the movement controller
         // is released.
         mVelocityX *= 1.0f - frameDelta * DRAG;
         mVelocityY *= 1.0f - frameDelta * DRAG;
         if (Utils.vector2DLength(mVelocityX, mVelocityY) < MINIMUM_VELOCITY) {
-            mVelocityX = 0.0f;
-            mVelocityY = 0.0f;
+            setVelocity( 0.0f, 0.0f );
         }
     }
 
     private void handleKeyInput( float delta ) {
-        if( mFireTimer > 0 )
+        if( mFireTimer > 0 ) {
             mFireTimer--;
-        if ( mController.isButtonDown(GamepadController.BUTTON_X) && mFireTimer == 0 ) {
-            mFireTimer = 20;
+            return;
+        }
+        if ( mController.isButtonDown( GamepadController.BUTTON_X ) && mFireTimer == 0 ) {
+            mFireTimer = FIRE_REFRESH_TIMER;
             calculateAimDirection();
             fireGun();
         }
     }
 
     private void fireGun() {
-        fireBullets(1, 0, BULLET_SPEED_BASEGUN, GUN_FIREDELAY_BASEGUN);
-
-    }
-
-    protected void fireBullets(int bulletCount, float spreadArc, float speed,
-                               float recharge) {
-        mGunRechargeTimer = recharge;
-
-        for (int i = 0; i < bulletCount; ++i) {
-            float angleDegrees;
-            if (bulletCount > 1) {
-                // Compute this bullet's position along the spread arc.
-                angleDegrees =
-                        -spreadArc / 2.0f + (float) i * spreadArc / ((float) bulletCount - 1.0f);
-            } else {
-                // Single bullets are always fired along the aiming direction.
-                angleDegrees = 0;
-            }
-            float angleRadians = (float) Math.toRadians(angleDegrees);
-            float angleSin = (float) Math.sin(angleRadians);
-            float angleCos = (float) Math.cos(angleRadians);
-
-            float shotDx = mAimX * angleCos - mAimY * angleSin;
-            float shotDy = mAimX * angleSin + mAimY * angleCos;
-            BaseParticle myShot = GameView.getShots().spawnParticle(BULLET_LIFETIME_IN_SECONDS);
-            if (myShot != null) {
-                myShot.setPosition(mPositionX, mPositionY);
-                myShot.setSpeed(shotDx * speed, shotDy * speed);
-                myShot.setColor(mColor);
-                myShot.setSize(BULLET_PARTICLE_SIZE);
-                myShot.setAspectRatio(BULLET_PARTICLE_ASPECT_RATIO);
-
-                // Offset the bullet's starting position a few steps ahead of our position.
-                myShot.incrementPosition(BULLET_PARTICLE_INITIAL_POSITION_INCREMENT);
-            }
-        }
+        //Bullets angle is based on angle of the ship + speed of the ship in a given direction
+        GameView.getInstance().mBullets.add(new Bullet(mColor, mAimX + mVelocityX, mAimY + mVelocityY, mPositionX, mPositionY));
     }
 
     protected void calculateAimDirection() {
@@ -236,14 +203,20 @@ public class Ship {
             // Normalize the direction vector.
             mAimX /= magnitude;
             mAimY /= magnitude;
-            mJoystickAiming = true;
         } else {
             // The firing joystick is not being used, so fire any shots in the direction
             // the player is currently traveling.
             mAimX = mHeadingX;
             mAimY = mHeadingY;
-            mJoystickAiming = false;
         }
+    }
+
+    public void setHeadingX( float heading ) {
+        mHeadingX = heading;
+    }
+
+    public void setHeadingY( float heading ) {
+        mHeadingY = heading;
     }
 
     public GamepadController getController() {

@@ -9,7 +9,7 @@ import com.ptrprograms.asteroidbelttv.Utils.Utils;
  */
 public class Asteroid {
 
-    private float mAsteroidSize;
+    public float mAsteroidSize;
 
     private Utils.Color mColor = new Utils.Color();
 
@@ -20,14 +20,45 @@ public class Asteroid {
     public float mPositionY;
 
     public Asteroid( Utils.Color color, float asteroidSize ) {
-        this.mColor.set( color );
+        mColor.set( color );
 
-        mVelocityX = (float) Math.random() * mVelocityMultiplier;
-        mVelocityY = (float) Math.random() * mVelocityMultiplier;
+        setRandomStartingPosition();
+        setRandomVelocities();
 
-        mPositionX = (float) Math.random() * Constants.MAP_RIGHT_COORDINATE;
-        mPositionY = (float) Math.random() * Constants.MAP_TOP_COORDINATE;
         mAsteroidSize = asteroidSize;
+    }
+
+    public Asteroid( Utils.Color color, float asteroidSize, float positionX, float positionY ) {
+        mPositionX = positionX;
+        mPositionY = positionY;
+
+        setRandomVelocities();
+
+        mAsteroidSize = asteroidSize;
+
+        mColor.set( color );
+    }
+
+    public void setRandomVelocities() {
+        setVelocityX( (float) Math.random() );
+        setVelocityY( (float) Math.random() );
+    }
+
+    public void setRandomStartingPosition() {
+        mPositionX = (float) Math.random() * Constants.MAP_RIGHT_COORDINATE;
+        if( Math.random() < 0.5 )
+            mPositionX = -mPositionX;
+        mPositionY = (float) Math.random() * Constants.MAP_TOP_COORDINATE;
+        if( Math.random() < 0.5 )
+            mPositionY = -mPositionY;
+    }
+
+    public void setVelocityX( float vel ) {
+        mVelocityX = vel * mVelocityMultiplier;
+    }
+
+    public void setVelocityY( float vel ) {
+        mVelocityY = vel * mVelocityMultiplier;
     }
 
     public void draw( ShapeBuffer sb ) {
@@ -40,9 +71,9 @@ public class Asteroid {
         vertices[1] = 0;
         vertices[2] = 0;
 
-        for(int i =1; i <361; i++){
-            vertices[(i * 3)+ 0] = (float) (0.5 * Math.cos((3.14/180) * (float)i ) + vertices[0]);
-            vertices[(i * 3)+ 1] = (float) (0.5 * Math.sin((3.14/180) * (float)i ) + vertices[1]);
+        for(int i = 1; i < 361; i++){
+            vertices[(i * 3)] = (float) ( Math.cos((3.14/180) * (float)i ) + vertices[0]);
+            vertices[(i * 3)+ 1] = (float) ( Math.sin((3.14/180) * (float)i ) + vertices[1]);
             vertices[(i * 3)+ 2] = 0;
         }
 
@@ -50,30 +81,26 @@ public class Asteroid {
     }
 
     public void update( float delta ) {
-        updateAsteroidPosition( delta );
-    }
-
-    public void updateAsteroidPosition( float delta ) {
         setPositionX( mPositionX + ( mVelocityX * delta ) );
         setPositionY( mPositionY + ( mVelocityY * delta ) );
     }
 
-    public void setPositionX( float positionX ) {
-        if( Constants.MAP_LEFT_COORDINATE - mAsteroidSize < positionX && positionX < Constants.MAP_RIGHT_COORDINATE + mAsteroidSize ) {
-            mPositionX = positionX;
-        } else if( positionX > Constants.MAP_RIGHT_COORDINATE ) {
+    public void setPositionX( float position ) {
+        if( Utils.isInXPlane( position, mAsteroidSize ) ) {
+            mPositionX = position;
+        } else if( Utils.isOffScreenToRight( position, mAsteroidSize ) ) {
             mPositionX = Constants.MAP_LEFT_COORDINATE;
-        } else if( positionX < Constants.MAP_LEFT_COORDINATE ) {
+        } else if( Utils.isOffScreenToLeft( position, mAsteroidSize ) ) {
             mPositionX = Constants.MAP_RIGHT_COORDINATE;
         }
     }
 
-    public void setPositionY( float positionY ) {
-        if( Constants.MAP_BOTTOM_COORDINATE - mAsteroidSize < positionY && positionY < Constants.MAP_TOP_COORDINATE + mAsteroidSize ) {
-            mPositionY = positionY;
-        } else if( positionY > Constants.MAP_TOP_COORDINATE + mAsteroidSize ) {
+    public void setPositionY( float position ) {
+        if( Utils.isInYPlane( position, mAsteroidSize ) ) {
+            mPositionY = position;
+        } else if( Utils.isOffScreenAboveTop( position, mAsteroidSize ) ) {
             mPositionY = Constants.MAP_BOTTOM_COORDINATE;
-        } else if( positionY < Constants.MAP_BOTTOM_COORDINATE - mAsteroidSize ) {
+        } else if( Utils.isOffScreenBelowBottom( position, mAsteroidSize ) ) {
             mPositionY = Constants.MAP_TOP_COORDINATE;
         }
     }

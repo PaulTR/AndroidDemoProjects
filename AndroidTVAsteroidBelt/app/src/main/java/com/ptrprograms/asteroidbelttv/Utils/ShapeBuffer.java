@@ -1,17 +1,5 @@
 /*
- * Copyright 2014 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Originally found and modified from here: https://github.com/googlesamples/androidtv-GameController/blob/master/GameControllerSample/src/main/java/com/google/fpl/gamecontroller/ShapeBuffer.java
  */
 
 package com.ptrprograms.asteroidbelttv.Utils;
@@ -40,6 +28,7 @@ public class ShapeBuffer {
     private static final int COORDS_PER_VERTEX = 3;
     // 4 bytes per vertex.
     private static final int VERTEX_STRIDE = COORDS_PER_VERTEX * 4;
+
     // Number of color components in each vertex.
     private static final int COLOR_CHANNELS_PER_VERTEX = 4;
     // Each color component is one byte.
@@ -81,8 +70,6 @@ public class ShapeBuffer {
         mVertexBuffer = bb.asFloatBuffer();
     }
 
-    /**
-     */
     /**
      * Loads the shaders and looks up uniform and attribute locations.
      *
