@@ -109,12 +109,7 @@ public class Ship {
         }
 
         updateShipPosition( delta );
-        checkBulletCollisions();
         handleKeyInput( delta );
-    }
-
-    private void checkBulletCollisions() {
-
     }
 
     private boolean updateStatus( float delta ) {
