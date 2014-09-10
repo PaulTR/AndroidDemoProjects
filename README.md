@@ -5,7 +5,7 @@ AndroidDemoProjects
 
 AndroidArduinoLEDControl: Android project and Arduino sketch file for controlling 3 different LEDs attached to an Arduino board from an Android device.
 
-AndroidTVAsteroidBelt: Example of using OpenGL and the Android TV controller to make a basic Asteroids game.
+AndroidTVAsteroidBelt: Example of using OpenGL and the Android TV controller to make a basic Asteroids game. The tutorial for this demo can be found on Binpress - http://www.binpress.com/tutorial/getting-started-with-game-development-for-android-tv/149
 
 AndroidTVMediaPlayer: A demo media project for the AndroidTV.
 
