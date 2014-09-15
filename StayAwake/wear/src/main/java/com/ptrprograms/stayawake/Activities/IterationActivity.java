@@ -83,7 +83,7 @@ public class IterationActivity extends Activity
     private void initList() {
         mListView = (ListView) findViewById( R.id.list_view );
         mListView.setAdapter( new ArrayAdapter<IterationListItem>( this,
-                android.R.layout.simple_list_item_1, mIterationTimes ) );
+                R.layout.simple_list_item, mIterationTimes ) );
         mListView.setOnItemClickListener( this );
     }
 
