@@ -2,11 +2,8 @@ package com.ptrprograms.wearmessageapi;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.wearable.view.WatchViewStub;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.wearable.MessageApi;
@@ -15,6 +12,7 @@ import com.google.android.gms.wearable.Wearable;
 
 public class MainActivity extends Activity implements MessageApi.MessageListener, GoogleApiClient.ConnectionCallbacks {
 
+    private static final String WEAR_MESSAGE_PATH = "/message";
     private GoogleApiClient mApiClient;
     private ArrayAdapter<String> mAdapter;
 
@@ -34,8 +32,8 @@ public class MainActivity extends Activity implements MessageApi.MessageListener
 
     private void initGoogleApiClient() {
         mApiClient = new GoogleApiClient.Builder( this )
-                .addApi(Wearable.API)
-                .addConnectionCallbacks(this)
+                .addApi( Wearable.API )
+                .addConnectionCallbacks( this )
                 .build();
 
         if( mApiClient != null && !( mApiClient.isConnected() || mApiClient.isConnecting() ) )
@@ -55,21 +53,20 @@ public class MainActivity extends Activity implements MessageApi.MessageListener
     }
 
     @Override
-    public void onMessageReceived( final MessageEvent messageEvent) {
+    public void onMessageReceived( final MessageEvent messageEvent ) {
         runOnUiThread( new Runnable() {
             @Override
             public void run() {
-                mAdapter.add( new String( messageEvent.getData() ) );
-                mAdapter.notifyDataSetChanged();
-                Toast.makeText( getApplicationContext(), new String( messageEvent.getData() ), Toast.LENGTH_SHORT ).show();
+                if( messageEvent.getPath().equalsIgnoreCase( WEAR_MESSAGE_PATH ) ) {
+                    mAdapter.add(new String(messageEvent.getData()));
+                    mAdapter.notifyDataSetChanged();
+                }
             }
         });
     }
 
     @Override
     public void onConnected(Bundle bundle) {
-        Toast.makeText( this, "Wear onConnected", Toast.LENGTH_SHORT ).show();
-
         Wearable.MessageApi.addListener( mApiClient, this );
     }
 

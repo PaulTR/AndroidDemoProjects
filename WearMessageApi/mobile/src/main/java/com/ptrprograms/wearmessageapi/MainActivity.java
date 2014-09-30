@@ -3,9 +3,6 @@ package com.ptrprograms.wearmessageapi;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,17 +10,16 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.wearable.MessageApi;
 import com.google.android.gms.wearable.Node;
 import com.google.android.gms.wearable.NodeApi;
 import com.google.android.gms.wearable.Wearable;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 
 public class MainActivity extends Activity {
+
+    private static final String START_ACTIVITY = "/start_activity";
+    private static final String WEAR_MESSAGE_PATH = "/message";
 
     private GoogleApiClient mApiClient;
 
@@ -40,6 +36,7 @@ public class MainActivity extends Activity {
 
         init();
         initGoogleApiClient();
+        sendMessage(START_ACTIVITY, "");
     }
 
     private void initGoogleApiClient() {
@@ -68,30 +65,24 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 String text = mEditText.getText().toString();
-                if( !TextUtils.isEmpty( text ) ) {
-                    mAdapter.add( text );
+                if (!TextUtils.isEmpty(text)) {
+                    mAdapter.add(text);
                     mAdapter.notifyDataSetChanged();
 
-                    sendMessage( text );
+                    sendMessage(WEAR_MESSAGE_PATH, text);
                 }
             }
         });
     }
 
-    private void sendMessage( final String text ) {
+    private void sendMessage( final String path, final String text ) {
         new Thread( new Runnable() {
             @Override
             public void run() {
                 NodeApi.GetConnectedNodesResult nodes = Wearable.NodeApi.getConnectedNodes( mApiClient ).await();
                 for(Node node : nodes.getNodes()) {
-                    Log.e("MainActivity", "node id: " + node.getId() );
                     MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(
-                            mApiClient, node.getId(), "/message", text.getBytes() ).await();
-                    if( result.getStatus().isSuccess() ) {
-                        Log.e( "MainActivity", "Message sent successfully" );
-                    }
-
-
+                            mApiClient, node.getId(), path, text.getBytes() ).await();
                 }
 
                 runOnUiThread( new Runnable() {
