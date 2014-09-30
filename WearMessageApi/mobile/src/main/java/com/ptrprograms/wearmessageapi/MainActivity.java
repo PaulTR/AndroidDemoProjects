@@ -16,7 +16,7 @@ import com.google.android.gms.wearable.NodeApi;
 import com.google.android.gms.wearable.Wearable;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements GoogleApiClient.ConnectionCallbacks {
 
     private static final String START_ACTIVITY = "/start_activity";
     private static final String WEAR_MESSAGE_PATH = "/message";
@@ -36,7 +36,6 @@ public class MainActivity extends Activity {
 
         init();
         initGoogleApiClient();
-        sendMessage(START_ACTIVITY, "");
     }
 
     private void initGoogleApiClient() {
@@ -93,5 +92,15 @@ public class MainActivity extends Activity {
                 });
             }
         }).start();
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+        sendMessage(START_ACTIVITY, "");
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
     }
 }

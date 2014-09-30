@@ -2,6 +2,7 @@ package com.ptrprograms.wearmessageapi;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -26,6 +27,8 @@ public class MainActivity extends Activity implements MessageApi.MessageListener
 
         mAdapter = new ArrayAdapter<String>( this, R.layout.list_item );
         mListView.setAdapter( mAdapter );
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         initGoogleApiClient();
     }

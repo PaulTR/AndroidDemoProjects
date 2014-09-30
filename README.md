@@ -49,6 +49,8 @@ Wear: Examples of possible notifications using the Google Wear developer preview
 
 WearCustomWatchFace: Creates a custom watch face for the Android Wear with a settings activity. Uses an undocumented API, but I'll have a sample up when an official API is available.
 
+WearMessageApi: Demonstration of communication between a smartphone and Android Wear device through the Wearable Message API. Article describing the demo can be found at www.binpress.com/tutorials
+
 ------------------------------------------------------------------------------------------------
 
 License
