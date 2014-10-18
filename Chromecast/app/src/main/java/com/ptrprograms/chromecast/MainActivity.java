@@ -30,8 +30,6 @@ import java.io.IOException;
 
 public class MainActivity extends ActionBarActivity {
 
-    private String VIDEO_URL = "https://ia700305.us.archive.org/5/items/NightOfTheLivingDead-MPEG/NightOfTheLivingDead_512kb.mp4";
-
     private Button mButton;
 
     private MediaRouter mMediaRouter;
@@ -133,7 +131,7 @@ public class MainActivity extends ActionBarActivity {
         MediaMetadata mediaMetadata = new MediaMetadata( MediaMetadata.MEDIA_TYPE_MOVIE );
         mediaMetadata.putString( MediaMetadata.KEY_TITLE, getString( R.string.video_title ) );
 
-        MediaInfo mediaInfo = new MediaInfo.Builder( VIDEO_URL )
+        MediaInfo mediaInfo = new MediaInfo.Builder( getString( R.string.video_url ) )
                 .setContentType( getString( R.string.content_type_mp4 ) )
                 .setStreamType( MediaInfo.STREAM_TYPE_BUFFERED )
                 .setMetadata( mediaMetadata )
