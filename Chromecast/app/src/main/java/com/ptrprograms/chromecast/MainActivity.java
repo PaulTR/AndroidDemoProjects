@@ -76,16 +76,10 @@ public class MainActivity extends ActionBarActivity {
         mCastClientListener = new Cast.Listener() {
             @Override
             public void onApplicationStatusChanged() {
-                if( mApiClient != null ) {
-                    //Log.e(TAG, "onApplicationStatusChanged: " + Cast.CastApi.getApplicationStatus(mApiClient));
-                }
             }
 
             @Override
             public void onVolumeChanged() {
-                if( mApiClient != null ) {
-                    //Log.e( TAG, "onVolumeChanged: " + Cast.CastApi.getVolume( mApiClient ) );
-                }
             }
 
             @Override
@@ -102,14 +96,12 @@ public class MainActivity extends ActionBarActivity {
             public void onStatusUpdated() {
                 MediaStatus mediaStatus = mRemoteMediaPlayer.getMediaStatus();
                 mIsPlaying = mediaStatus.getPlayerState() == MediaStatus.PLAYER_STATE_PLAYING;
-                //Handle any app logic related to UI for the app state
             }
         });
 
         mRemoteMediaPlayer.setOnMetadataUpdatedListener( new RemoteMediaPlayer.OnMetadataUpdatedListener() {
             @Override
             public void onMetadataUpdated() {
-                //Can get media info and metadata from the remote media player
             }
         });
     }
