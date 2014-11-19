@@ -11,6 +11,8 @@ AndroidTVMediaPlayer: A demo media project for the AndroidTV.
 
 Animations: Example of using the new animation features in Android L. Goes over ripples, animated UI widgets, circular reveal, activity transitions and shared element activity transitions.
 
+Chromecast: Demo of using Android as a Chromecast sender application for playing an online resource on a television.
+
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
 
 Flashlight: Can't be an Android developer without making a flashlight app, right?
@@ -31,6 +33,8 @@ Notifications: Demo of different options available in a standard notification fr
 
 NotificationsCustomLayout: Creates a custom expanded layout for Jellybean+ that uses a service to perform actions based on notification button clicks.
 
+MediaSessionwithMediaStyleNotification: Example of using a media session with the MediaStyle notification for Android Lollipop. These notifications are used for lock screen media controls.
+
 ProductFlavorsandResources: Uses Gradle and the resource structure of Android to demonstrate creating multiple apps from the same code base.
 
 Random Kitty Muzei: Plugin for Muzei that displays a new random cat image every hour from a remote source as a device wallpaper.
@@ -45,9 +49,9 @@ Street View: Implements the new Google Street View feature.
 
 Video Player: Native video player for playing remote content.
 
-Wear: Examples of possible notifications using the Google Wear developer preview.
-
 WearCustomWatchFace: Creates a custom watch face for the Android Wear with a settings activity. Uses an undocumented API, but I'll have a sample up when an official API is available.
+
+WearDevelopersPreviewNotifications: Examples of possible notifications using the Google Wear developer preview.
 
 WearMessageApi: Demonstration of communication between a smartphone and Android Wear device through the Wearable Message API. Article describing the demo can be found at www.binpress.com/tutorials
 
