@@ -4,19 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.media.AudioManager;
-import android.media.MediaDescription;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.media.MediaMetadata;
-import android.media.MediaPlayer;
 import android.media.Rating;
 import android.media.browse.MediaBrowser;
 import android.media.session.MediaSession;
-import android.net.Uri;
-import android.os.*;
+import android.media.session.PlaybackState;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.ResultReceiver;
 import android.service.media.MediaBrowserService;
-import android.util.Base64;
 import android.util.Log;
 
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
+
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,11 +29,33 @@ import java.util.List;
 /**
  * Created by paulruiz on 11/18/14.
  */
-public class AutoMediaBrowserService extends MediaBrowserService implements MediaPlayer.OnPreparedListener,
-        MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener, AudioManager.OnAudioFocusChangeListener {
+public class AutoMediaBrowserService extends MediaBrowserService {
 
     public static final String MEDIA_ID_ROOT = "__ROOT__";
     public static final String MEDIA_ID_MUSICS_BY_GENRE = "__BY_GENRE__";
+
+    private int isPlaying;
+
+    Target target = new Target() {
+        @Override
+        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+            try {
+                setWallpaper(bitmap);
+            } catch( IOException e ) {
+
+            }
+        }
+
+        @Override
+        public void onBitmapFailed(Drawable errorDrawable) {
+
+        }
+
+        @Override
+        public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+        }
+    };
 
     static final byte[][] VALID_PUBLIC_SIGNATURES = new byte[][]{
             // Android Auto release public key
@@ -139,7 +165,6 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
 
     private MediaSession mSession;
     private MediaSession.Callback mMediaSessionCallbacks;
-    private AudioManager mAudioManager;
 
     private static final String TAG = "AutoMediaBrowserService";
 
@@ -148,26 +173,8 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
         super.onCreate();
         Log.e( "AutoMediaBrowserService", "onCreate" );
 
-        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-
         initCallbacks();
         initMediaSessions();
-
-        mAudioManager.requestAudioFocus(this, AudioManager.STREAM_MUSIC,
-                AudioManager.AUDIOFOCUS_GAIN);
-
-        /*
-        Bundle extras = new Bundle();
-
-        extras.putBoolean(
-                "com.google.android.gms.car.media.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT",
-                true);
-        extras.putBoolean(
-                "com.google.android.gms.car.media.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS",
-                true);
-        mSession.setExtras(extras);
-        */
-
 
     }
 
@@ -177,18 +184,23 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
         mSession.setCallback( mMediaSessionCallbacks );
         mSession.setFlags(MediaSession.FLAG_HANDLES_MEDIA_BUTTONS | MediaSession.FLAG_HANDLES_TRANSPORT_CONTROLS);
 
-        List<MediaSession.QueueItem> queue = new ArrayList<MediaSession.QueueItem>();
-        MediaMetadata data = new MediaMetadata.Builder()
-                .putString( MediaMetadata.METADATA_KEY_TITLE, "title" )
-                .putString(MediaMetadata.METADATA_KEY_DISPLAY_DESCRIPTION, "description")
-                .build();
-        queue.add( new MediaSession.QueueItem( data.getDescription(), 0 ) );
-        queue.add( new MediaSession.QueueItem( data.getDescription(), 1 ) );
-        queue.add( new MediaSession.QueueItem( data.getDescription(), 2 ) );
-        queue.add( new MediaSession.QueueItem( data.getDescription(), 3 ) );
+        PlaybackState.Builder stateBuilder = new PlaybackState.Builder()
+                .setActions(getAvailableActions());
 
-        mSession.setQueue( queue );
+        mSession.setPlaybackState(stateBuilder.build());
     }
+
+    private long getAvailableActions() {
+        long actions = PlaybackState.ACTION_PLAY | PlaybackState.ACTION_PLAY_FROM_MEDIA_ID |
+                PlaybackState.ACTION_PLAY_FROM_SEARCH;
+
+        if (isPlaying == PlaybackState.STATE_PLAYING) {
+            actions |= PlaybackState.ACTION_PAUSE;
+        }
+
+        return actions;
+    }
+
 
     private void initCallbacks() {
         mMediaSessionCallbacks = new MediaSession.Callback() {
@@ -288,11 +300,6 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
             // be made to other media browsing methods.
             return null;
         }
-        if ("com.ptrprograms.androidautomedia".equals(clientPackageName)) {
-            // Optional: if your app needs to adapt ads, music library or anything else that
-            // needs to run differently when connected to the car, this is where you should handle
-            // it.
-        }
         return new BrowserRoot("__ROOT__", null);
     }
 
@@ -307,21 +314,16 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
             packageInfo = packageManager.getPackageInfo(
                     callingPackage, PackageManager.GET_SIGNATURES);
         } catch (PackageManager.NameNotFoundException ignored) {
-            if (Log.isLoggable(TAG, Log.DEBUG)) {
-                Log.d(TAG, "Package manager can't find package " + callingPackage
-                        + ", defaulting to false");
-            }
             return false;
         }
         if (packageInfo == null) {
-            Log.w(TAG, "Package manager can't find package: " + callingPackage);
             return false;
         }
 
         if (packageInfo.signatures.length != 1) {
-            Log.w(TAG, "Package has more than one signature.");
             return false;
         }
+
         final byte[] signature = packageInfo.signatures[0].toByteArray();
 
         for (int i = 0; i < VALID_PUBLIC_SIGNATURES.length; i++) {
@@ -331,10 +333,6 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
             }
         }
 
-        if (Log.isLoggable(TAG, Log.VERBOSE)) {
-            Log.v(TAG, "Signature not valid.  Found: \n" +
-                    Base64.encodeToString(signature, 0));
-        }
         return false;
     }
 
@@ -351,8 +349,16 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
         List<MediaBrowser.MediaItem> mediaItems = new ArrayList<MediaBrowser.MediaItem>();
 
         MediaMetadata data = new MediaMetadata.Builder()
-                .putString( MediaMetadata.METADATA_KEY_TITLE, "Media Title" )
-                .putString( MediaMetadata.METADATA_KEY_MEDIA_ID, "ID12345").build();
+                .putString(MediaMetadata.METADATA_KEY_TITLE, "Gallows Pole")
+                .putString( MediaMetadata.METADATA_KEY_ART_URI, "http://upload.wikimedia.org/wikipedia/en/archive/2/26/20141106002529!Led_Zeppelin_-_Led_Zeppelin_IV.jpg" )
+                .putString( MediaMetadata.METADATA_KEY_ALBUM_ART_URI, "http://upload.wikimedia.org/wikipedia/en/archive/2/26/20141106002529!Led_Zeppelin_-_Led_Zeppelin_IV.jpg" )
+                .putString(MediaMetadata.METADATA_KEY_ALBUM, "Led Zeppelin IV")
+                .putString(MediaMetadata.METADATA_KEY_ARTIST, "Led Zeppelin")
+                .putLong(MediaMetadata.METADATA_KEY_DURATION, 430000)
+                .putString(MediaMetadata.METADATA_KEY_GENRE, "Rock")
+                .putLong(MediaMetadata.METADATA_KEY_TRACK_NUMBER, 1)
+                .putLong(MediaMetadata.METADATA_KEY_NUM_TRACKS, 8)
+                .putString(MediaMetadata.METADATA_KEY_MEDIA_ID, "ID12345").build();
 
 
         mediaItems.add( new MediaBrowser.MediaItem(
@@ -364,27 +370,6 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
     public void onDestroy() {
         super.onDestroy();
         mSession.release();
-    }
-
-    @Override
-    public void onAudioFocusChange(int focusChange) {
-        Log.e( "AutoMediaBrowserService", "onAudioFocusChange" );
-    }
-
-    @Override
-    public void onCompletion(MediaPlayer mp) {
-        Log.e( "AutoMediaBrowserService", "onCompletion" );
-    }
-
-    @Override
-    public boolean onError(MediaPlayer mp, int what, int extra) {
-        Log.e( "AutoMediaBrowserService", "onError" );
-        return false;
-    }
-
-    @Override
-    public void onPrepared(MediaPlayer mp) {
-        Log.e( "AutoMediaBrowserService", "onPrepared" );
     }
 
     private static byte[] extractKey(String keyString) {
