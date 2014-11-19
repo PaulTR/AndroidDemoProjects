@@ -71,12 +71,10 @@ public class MediaPlayerService extends Service {
         intent.setAction( intentAction );
         PendingIntent pendingIntent = PendingIntent.getService(getApplicationContext(), 1, intent, 0);
         return new Notification.Action.Builder( icon, title, pendingIntent ).build();
-
     }
 
     private void buildNotification( Notification.Action action ) {
             Notification.MediaStyle style = new Notification.MediaStyle();
-            style.setMediaSession( mSession.getSessionToken() );
 
             Intent intent = new Intent( getApplicationContext(), MediaPlayerService.class );
             intent.setAction( ACTION_STOP );

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/button_silence"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/white"
+    android:src="@drawable/ic_lock_silent_mode" />
