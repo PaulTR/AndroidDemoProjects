@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
+import android.media.MediaDescription;
 import android.media.MediaMetadata;
 import android.media.MediaPlayer;
 import android.media.Rating;
 import android.media.browse.MediaBrowser;
 import android.media.session.MediaSession;
+import android.net.Uri;
 import android.os.*;
 import android.service.media.MediaBrowserService;
 import android.util.Base64;
@@ -25,6 +27,9 @@ import java.util.List;
  */
 public class AutoMediaBrowserService extends MediaBrowserService implements MediaPlayer.OnPreparedListener,
         MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener, AudioManager.OnAudioFocusChangeListener {
+
+    public static final String MEDIA_ID_ROOT = "__ROOT__";
+    public static final String MEDIA_ID_MUSICS_BY_GENRE = "__BY_GENRE__";
 
     static final byte[][] VALID_PUBLIC_SIGNATURES = new byte[][]{
             // Android Auto release public key
@@ -148,6 +153,9 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
         initCallbacks();
         initMediaSessions();
 
+        mAudioManager.requestAudioFocus(this, AudioManager.STREAM_MUSIC,
+                AudioManager.AUDIOFOCUS_GAIN);
+
         /*
         Bundle extras = new Bundle();
 
@@ -172,7 +180,7 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
         List<MediaSession.QueueItem> queue = new ArrayList<MediaSession.QueueItem>();
         MediaMetadata data = new MediaMetadata.Builder()
                 .putString( MediaMetadata.METADATA_KEY_TITLE, "title" )
-                .putString( MediaMetadata.METADATA_KEY_DISPLAY_DESCRIPTION, "description" )
+                .putString(MediaMetadata.METADATA_KEY_DISPLAY_DESCRIPTION, "description")
                 .build();
         queue.add( new MediaSession.QueueItem( data.getDescription(), 0 ) );
         queue.add( new MediaSession.QueueItem( data.getDescription(), 1 ) );
@@ -330,10 +338,26 @@ public class AutoMediaBrowserService extends MediaBrowserService implements Medi
         return false;
     }
 
+    /**
+     * Actual implementation of onLoadChildren that assumes that MusicProvider is already
+     * initialized.
+     */
     @Override
-    public void onLoadChildren(String parentId, Result<List<MediaBrowser.MediaItem>> result) {
-        Log.e( "AutoMediaBrowserService", "onLoadChildren" );
+    public void onLoadChildren(final String parentMediaId,
+                                  final Result<List<MediaBrowser.MediaItem>> result) {
+
         result.detach();
+
+        List<MediaBrowser.MediaItem> mediaItems = new ArrayList<MediaBrowser.MediaItem>();
+
+        MediaMetadata data = new MediaMetadata.Builder()
+                .putString( MediaMetadata.METADATA_KEY_TITLE, "Media Title" )
+                .putString( MediaMetadata.METADATA_KEY_MEDIA_ID, "ID12345").build();
+
+
+        mediaItems.add( new MediaBrowser.MediaItem(
+                data.getDescription(), MediaBrowser.MediaItem.FLAG_PLAYABLE) );
+        result.sendResult(mediaItems);
     }
 
     @Override
