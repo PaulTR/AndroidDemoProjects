@@ -6,19 +6,13 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.media.AudioTrack;
-import android.media.MediaMetadata;
 import android.media.MediaPlayer;
 import android.media.Rating;
 import android.media.session.MediaController;
 import android.media.session.MediaSession;
 import android.media.session.MediaSessionManager;
-//import android.media.session.MediaSessionToken;
-import android.media.session.PlaybackState;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.ProgressBar;
 
 /**
  * Created by paulruiz on 10/28/14.
