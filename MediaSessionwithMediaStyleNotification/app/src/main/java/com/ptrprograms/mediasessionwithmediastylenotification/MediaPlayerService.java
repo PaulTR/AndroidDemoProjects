@@ -6,19 +6,13 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.media.AudioTrack;
-import android.media.MediaMetadata;
 import android.media.MediaPlayer;
 import android.media.Rating;
 import android.media.session.MediaController;
 import android.media.session.MediaSession;
 import android.media.session.MediaSessionManager;
-import android.media.session.MediaSessionToken;
-import android.media.session.PlaybackState;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.ProgressBar;
 
 /**
  * Created by paulruiz on 10/28/14.
@@ -91,6 +85,7 @@ public class MediaPlayerService extends Service {
             builder.addAction( action );
             builder.addAction( generateAction( android.R.drawable.ic_media_ff, "Fast Foward", ACTION_FAST_FORWARD ) );
             builder.addAction( generateAction( android.R.drawable.ic_media_next, "Next", ACTION_NEXT ) );
+            style.setShowActionsInCompactView(0,1,2,3,4);
 
             NotificationManager notificationManager = (NotificationManager) getSystemService( Context.NOTIFICATION_SERVICE );
             notificationManager.notify( 1, builder.build() );
@@ -108,11 +103,11 @@ public class MediaPlayerService extends Service {
 
     private void initMediaSessions() {
         mMediaPlayer = new MediaPlayer();
-        mManager = (MediaSessionManager) getSystemService(Context.MEDIA_SESSION_SERVICE);
-        mSession = mManager.createSession("sample session");
-        mController = MediaController.fromToken( mSession.getSessionToken() );
 
-        mSession.addTransportControlsCallback( new MediaSession.TransportControlsCallback() {
+        mSession = new MediaSession(getApplicationContext(), "simple player session");
+        mController =new MediaController(getApplicationContext(), mSession.getSessionToken());
+
+        mSession.setCallback(new MediaSession.Callback(){
             @Override
             public void onPlay() {
                 super.onPlay();
@@ -177,7 +172,8 @@ public class MediaPlayerService extends Service {
             public void onSetRating(Rating rating) {
                 super.onSetRating(rating);
             }
-        });
+            }
+        );
     }
 
     @Override
