@@ -27,7 +27,7 @@ public class WeatherTextView extends TextView implements Updateable {
 
     @Override
     public void update( Weather weather ) {
-        Log.e("WeatherTextView", "update!");
+        Log.e( "WeatherTextView", "update!" );
 
         if( weather == null || weather.getWeatherCondition() == null )
             return;

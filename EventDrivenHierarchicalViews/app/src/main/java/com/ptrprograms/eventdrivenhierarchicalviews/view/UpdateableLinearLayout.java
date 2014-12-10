@@ -34,23 +34,23 @@ public class UpdateableLinearLayout extends LinearLayout implements Updateable {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mUpdateableViews = findTopLevelUpdateables(this);
+        mUpdateableViews = findTopLevelUpdateables( this );
     }
 
-    public List<Updateable> findTopLevelUpdateables(ViewGroup view) {
+    public List<Updateable> findTopLevelUpdateables( ViewGroup view ) {
         ArrayList<Updateable> results = new ArrayList<Updateable>();
 
         int childCount = view.getChildCount();
-        for (int i = 0; i < childCount; i++) {
+        for( int i = 0; i < childCount; i++ ) {
             results = findTopLevelUpdateables( view.getChildAt(i), results );
         }
         return results;
     }
 
-    protected ArrayList<Updateable> findTopLevelUpdateables(View view,
-                                                                       ArrayList<Updateable> results) {
+    protected ArrayList<Updateable> findTopLevelUpdateables( View view,
+                                                            ArrayList<Updateable> results ) {
 
-        if ( ( view instanceof ViewGroup ) && !( view instanceof Updateable ) ) {
+        if( ( view instanceof ViewGroup ) && !( view instanceof Updateable ) ) {
             ViewGroup viewGroup = (ViewGroup) view;
             int childCount = viewGroup.getChildCount();
             for (int i = 0; i < childCount; i++) {
@@ -59,15 +59,15 @@ public class UpdateableLinearLayout extends LinearLayout implements Updateable {
         }
 
         Updateable result = (view != null && view instanceof Updateable) ? (Updateable) view : null;
-        if (result != null) {
-            results.add(result);
+        if( result != null ) {
+            results.add( result );
         }
         results.trimToSize();
         return results;
     }
 
     @Override
-    public void update(Weather weather) {
+    public void update( Weather weather ) {
         Log.e("UpdateableLinearLayout", "Update!" );
         if( weather != null && mUpdateableViews != null && !mUpdateableViews.isEmpty() ) {
             for( Updateable view : mUpdateableViews ) {

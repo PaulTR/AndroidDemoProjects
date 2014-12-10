@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
                     Util.getRandomTemperature( random ),
                     Util.getRandomWindSpeed( random ),
                     Util.getRandomWindDirection( directions, random ),
-                    Util.getRandomWeatherCondition(conditions, random) ) );
+                    Util.getRandomWeatherCondition( conditions, random ) ) );
         }
     }
 
