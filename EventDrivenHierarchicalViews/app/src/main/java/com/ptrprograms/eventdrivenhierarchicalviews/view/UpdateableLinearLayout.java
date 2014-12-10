@@ -42,19 +42,19 @@ public class UpdateableLinearLayout extends LinearLayout implements Updateable {
 
         int childCount = view.getChildCount();
         for (int i = 0; i < childCount; i++) {
-            results = findTopLevelUpdateablesByPredicate( view.getChildAt(i), results );
+            results = findTopLevelUpdateables( view.getChildAt(i), results );
         }
         return results;
     }
 
-    protected ArrayList<Updateable> findTopLevelUpdateablesByPredicate(View view,
+    protected ArrayList<Updateable> findTopLevelUpdateables(View view,
                                                                        ArrayList<Updateable> results) {
 
         if ( ( view instanceof ViewGroup ) && !( view instanceof Updateable ) ) {
             ViewGroup viewGroup = (ViewGroup) view;
             int childCount = viewGroup.getChildCount();
             for (int i = 0; i < childCount; i++) {
-                findTopLevelUpdateablesByPredicate(viewGroup.getChildAt(i), results);
+                findTopLevelUpdateables(viewGroup.getChildAt(i), results);
             }
         }
 
