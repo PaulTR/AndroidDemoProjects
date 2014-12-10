@@ -1,0 +1,27 @@
+<com.ptrprograms.eventdrivenhierarchicalviews.view.UpdateableLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ptrprograms.eventdrivenhierarchicalviews.view.WeatherImage
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <com.ptrprograms.eventdrivenhierarchicalviews.view.WeatherTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp" />
+
+    <com.ptrprograms.eventdrivenhierarchicalviews.view.WeatherTemperatureTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp" />
+
+    <com.ptrprograms.eventdrivenhierarchicalviews.view.WindWeatherTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp" />
+
+</com.ptrprograms.eventdrivenhierarchicalviews.view.UpdateableLinearLayout>
