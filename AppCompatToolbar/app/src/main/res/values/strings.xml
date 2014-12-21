@@ -8,8 +8,7 @@
     <string name="action_default_title">Show Default Title</string>
     <string name="action_custom_title">Show Custom Title/Subtitle</string>
     <string name="action_hide_title">Hide Title/Subtitle</string>
-    <string name="action_default_logo">Show Default Logo</string>
-    <string name="action_custom_logo">Show Custom Logo</string>
+    <string name="action_default_logo">Show Logo</string>
     <string name="action_hide_logo">Hide Logo</string>
     <string name="action_show_up_arrow">Show Up Arrow</string>
     <string name="action_hide_up_arrow">Hide Up Arrow</string>

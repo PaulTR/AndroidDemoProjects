@@ -49,11 +49,6 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayUseLogoEnabled( true );
     }
 
-    private void showCustomLogo() {
-        getSupportActionBar().setLogo( android.R.drawable.ic_btn_speak_now );
-        getSupportActionBar().setDisplayUseLogoEnabled( true );
-    }
-
     private void hideLogo() {
         getSupportActionBar().setDisplayUseLogoEnabled( false );
     }
@@ -110,10 +105,6 @@ public class MainActivity extends ActionBarActivity {
             }
             case R.id.action_default_logo: {
                 showDefaultLogo();
-                break;
-            }
-            case R.id.action_custom_logo: {
-                showCustomLogo();
                 break;
             }
             case R.id.action_hide_logo: {

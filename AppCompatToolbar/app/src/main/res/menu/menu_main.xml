@@ -23,11 +23,6 @@
         android:orderInCategory="400"
         app:showAsAction="never" />
 
-    <item android:id="@+id/action_custom_logo"
-        android:title="@string/action_custom_logo"
-        android:orderInCategory="500"
-        app:showAsAction="never" />
-
     <item android:id="@+id/action_hide_logo"
         android:title="@string/action_hide_logo"
         android:orderInCategory="600"
