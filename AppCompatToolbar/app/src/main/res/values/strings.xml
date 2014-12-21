@@ -13,5 +13,7 @@
     <string name="action_hide_logo">Hide Logo</string>
     <string name="action_show_up_arrow">Show Up Arrow</string>
     <string name="action_hide_up_arrow">Hide Up Arrow</string>
+    <string name="action_show_custom_view">Show Custom View</string>
+    <string name="action_hide_custom_view">Hide Custom View</string>
 
 </resources>

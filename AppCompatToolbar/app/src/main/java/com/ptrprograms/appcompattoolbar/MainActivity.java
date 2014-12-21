@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
+    private Toolbar mToolbar;
+    private AnalogClock mCustomView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,12 +27,21 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar );
+        mToolbar = (Toolbar) findViewById( R.id.toolbar );
+        setSupportActionBar( mToolbar );
+    }
 
-        AnalogClock view = (AnalogClock) LayoutInflater.from( this ).inflate( R.layout.ab_clock, null );
-        toolbar.addView( view );
+    private void hideCustomView() {
+        mToolbar.removeView( mCustomView );
+        setSupportActionBar( mToolbar );
+    }
 
-        setSupportActionBar( toolbar );
+    private void showCustomView() {
+        if( mCustomView == null )
+            mCustomView = (AnalogClock) LayoutInflater.from( this ).inflate( R.layout.ab_clock, null );
+
+        mToolbar.addView( mCustomView );
+        setSupportActionBar( mToolbar);
     }
 
     private void showDefaultLogo() {
@@ -114,6 +126,14 @@ public class MainActivity extends ActionBarActivity {
             }
             case R.id.action_hide_up_arrow: {
                 hideHomeUpArrow();
+                break;
+            }
+            case R.id.action_show_custom_view: {
+                showCustomView();
+                break;
+            }
+            case R.id.action_hide_custom_view: {
+                hideCustomView();
                 break;
             }
             case android.R.id.home: {

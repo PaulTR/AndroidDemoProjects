@@ -43,4 +43,14 @@
         android:orderInCategory="800"
         app:showAsAction="never" />
 
+    <item android:id="@+id/action_show_custom_view"
+        android:title="@string/action_show_custom_view"
+        android:orderInCategory="900"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_hide_custom_view"
+        android:title="@string/action_hide_custom_view"
+        android:orderInCategory="1000"
+        app:showAsAction="never" />
+
 </menu>
