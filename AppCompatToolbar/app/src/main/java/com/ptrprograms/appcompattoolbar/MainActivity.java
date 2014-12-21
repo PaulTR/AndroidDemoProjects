@@ -40,6 +40,7 @@ public class MainActivity extends ActionBarActivity {
         if( mCustomView == null )
             mCustomView = (AnalogClock) LayoutInflater.from( this ).inflate( R.layout.ab_clock, null );
 
+        mToolbar.removeView( mCustomView );
         mToolbar.addView( mCustomView );
         setSupportActionBar( mToolbar);
     }
