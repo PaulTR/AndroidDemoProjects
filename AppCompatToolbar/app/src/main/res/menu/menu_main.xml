@@ -1,0 +1,46 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item android:id="@+id/action_default_title"
+        android:title="@string/action_default_title"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_custom_title"
+        android:title="@string/action_custom_title"
+        android:orderInCategory="200"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_hide_title"
+        android:title="@string/action_hide_title"
+        android:orderInCategory="300"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_default_logo"
+        android:title="@string/action_default_logo"
+        android:orderInCategory="400"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_custom_logo"
+        android:title="@string/action_custom_logo"
+        android:orderInCategory="500"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_hide_logo"
+        android:title="@string/action_hide_logo"
+        android:orderInCategory="600"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_show_up_arrow"
+        android:title="@string/action_show_up_arrow"
+        android:orderInCategory="700"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_hide_up_arrow"
+        android:title="@string/action_hide_up_arrow"
+        android:orderInCategory="800"
+        app:showAsAction="never" />
+
+</menu>
