@@ -42,7 +42,6 @@ public class MainActivity extends ActionBarActivity {
 
         mToolbar.removeView( mCustomView );
         mToolbar.addView( mCustomView );
-        setSupportActionBar( mToolbar );
     }
 
     private void showDefaultLogo() {
