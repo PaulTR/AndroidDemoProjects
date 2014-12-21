@@ -10,7 +10,6 @@
         <!-- Overflow menu button color -->
         <item name="android:textColorSecondary">#FFFFFF</item>
 
-        <item name="android:actionBarStyle">@style/AppTheme.Toolbar</item>
     </style>
 
     <style name="AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
