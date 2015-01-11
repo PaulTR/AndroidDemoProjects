@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="state_go" format="boolean" />
+    <attr name="state_slow_down" format="boolean" />
+    <attr name="state_stop" format="boolean" />
+</resources>

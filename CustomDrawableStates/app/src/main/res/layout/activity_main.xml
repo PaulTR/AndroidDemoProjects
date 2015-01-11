@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ptrprograms.customdrawablestates.CustomDrawableTextView
+        android:id="@+id/custom_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:text="@string/hello_world"
+        android:background="@drawable/custom_state_background"/>
+
+</RelativeLayout>
