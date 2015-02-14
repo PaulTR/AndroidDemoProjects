@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by paulruiz on 11/18/14.
+ * Created by paulruiz on 2/13/15.
  */
 public class AutoMediaBrowserService extends MediaBrowserService {
 
