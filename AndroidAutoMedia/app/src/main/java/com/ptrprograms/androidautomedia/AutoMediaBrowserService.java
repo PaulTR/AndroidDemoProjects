@@ -1,29 +1,18 @@
 package com.ptrprograms.androidautomedia;
 
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.MediaDescription;
 import android.media.MediaMetadata;
-import android.media.Rating;
 import android.media.browse.MediaBrowser;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.ResultReceiver;
 import android.service.media.MediaBrowserService;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
