@@ -5,13 +5,19 @@ AndroidDemoProjects
 
 AndroidArduinoLEDControl: Android project and Arduino sketch file for controlling 3 different LEDs attached to an Arduino board from an Android device.
 
+AndroidAutoMedia: Demo for creating a navigation and playback architecture for Android Auto's media items
+
 AndroidTVAsteroidBelt: Example of using OpenGL and the Android TV controller to make a basic Asteroids game. The tutorial for this demo can be found on Binpress - http://www.binpress.com/tutorial/getting-started-with-game-development-for-android-tv/149
 
 AndroidTVMediaPlayer: A demo media project for the AndroidTV.
 
 Animations: Example of using the new animation features in Android L. Goes over ripples, animated UI widgets, circular reveal, activity transitions and shared element activity transitions.
 
+AppCompatToolbar: Demo of implementing the Toolbar from the AppCompat support library as a replacement for the standard built in actionbar.
+
 Chromecast: Demo of using Android as a Chromecast sender application for playing an online resource on a television.
+
+CustomDrawableStates: Implementation of custom drawable states in Android in order to extend past the standard 'pressed', 'active', etc.
 
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
 
@@ -27,19 +33,21 @@ Google Maps: Basic implementation of the Google Maps fragment that allows the us
 
 IconColorization: Goes over using Picasso to change the color of drawables programatically.
 
+MediaSessionwithMediaStyleNotification: Example of using a media session with the MediaStyle notification for Android Lollipop. These notifications are used for lock screen media controls.
+
 NavigationDrawer: An example of using the navigation drawer in an activity to load fragments. Also an example of Square's Otto library for firing events from a list to the activity.
 
 Notifications: Demo of different options available in a standard notification from the Android OS.
 
 NotificationsCustomLayout: Creates a custom expanded layout for Jellybean+ that uses a service to perform actions based on notification button clicks.
 
-MediaSessionwithMediaStyleNotification: Example of using a media session with the MediaStyle notification for Android Lollipop. These notifications are used for lock screen media controls.
-
 ProductFlavorsandResources: Uses Gradle and the resource structure of Android to demonstrate creating multiple apps from the same code base.
 
 Random Kitty Muzei: Plugin for Muzei that displays a new random cat image every hour from a remote source as a device wallpaper.
 
 Sensor List: Gathers a list of all hardware sensors available on the device, and displays the values that they produce in real time.
+
+SilenceRingerWidget: Sample code for building a widget that silences the phone (including on Lollipop) with one button press.
 
 StaggeredGridView: Sample app using Etsy's StaggeredGridView library - https://github.com/etsy/AndroidStaggeredGrid
 
@@ -58,7 +66,7 @@ WearMessageApi: Demonstration of communication between a smartphone and Android 
 ------------------------------------------------------------------------------------------------
 
 License
-Copyright 2014 Paul Trebilcox-Ruiz
+Copyright 2014-2015 Paul Trebilcox-Ruiz
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
