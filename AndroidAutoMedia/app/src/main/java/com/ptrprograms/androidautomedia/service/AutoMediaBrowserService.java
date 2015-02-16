@@ -127,6 +127,8 @@ public class AutoMediaBrowserService extends MediaBrowserService {
 
     @Override
     public BrowserRoot onGetRoot(String clientPackageName, int clientUid, Bundle rootHints) {
+        //Can do package and other validation to determine if calling app has access to media items
+        //in this service. If not, return null.
         return new BrowserRoot(BROWSEABLE_ROOT, null);
     }
 
