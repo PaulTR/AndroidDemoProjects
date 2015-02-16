@@ -1,4 +1,4 @@
-package com.ptrprograms.androidautomedia;
+package com.ptrprograms.androidautomedia.service;
 
 import android.graphics.BitmapFactory;
 import android.media.MediaDescription;
@@ -12,6 +12,10 @@ import android.service.media.MediaBrowserService;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.ptrprograms.androidautomedia.R;
+import com.ptrprograms.androidautomedia.model.Song;
+import com.ptrprograms.androidautomedia.util.SongGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,14 +49,12 @@ public class AutoMediaBrowserService extends MediaBrowserService {
         public void onPause() {
             super.onPause();
 
-            Toast.makeText( getApplicationContext(), "MediaSession onPause", Toast.LENGTH_SHORT ).show();
             toggleMediaPlaybackState( false );
         }
 
         @Override
         public void onPlayFromMediaId(String mediaId, Bundle extras) {
             super.onPlayFromMediaId(mediaId, extras);
-            Log.e( "Android Auto", "mediaId: " + mediaId );
 
             initMediaMetaData( mediaId );
             toggleMediaPlaybackState( true );
@@ -74,7 +76,7 @@ public class AutoMediaBrowserService extends MediaBrowserService {
     }
 
     private void initMediaSession() {
-        mMediaSession = new MediaSession( this, "MediaSessionId" );
+        mMediaSession = new MediaSession( this, "Android Auto Audio Demo" );
         mMediaSession.setActive( true );
         mMediaSession.setCallback( mMediaSessionCallback );
 

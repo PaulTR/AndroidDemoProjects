@@ -1,4 +1,4 @@
-package com.ptrprograms.androidautomedia;
+package com.ptrprograms.androidautomedia.model;
 
 /**
  * Created by paulruiz on 2/13/15.

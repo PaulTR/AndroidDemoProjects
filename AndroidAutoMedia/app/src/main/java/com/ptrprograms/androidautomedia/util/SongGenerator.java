@@ -1,4 +1,6 @@
-package com.ptrprograms.androidautomedia;
+package com.ptrprograms.androidautomedia.util;
+
+import com.ptrprograms.androidautomedia.model.Song;
 
 import java.util.ArrayList;
 import java.util.List;
