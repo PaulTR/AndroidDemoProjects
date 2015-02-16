@@ -172,7 +172,7 @@ public class AutoMediaBrowserService extends MediaBrowserService {
         MediaDescription.Builder mediaDescriptionBuilder = new MediaDescription.Builder();
         mediaDescriptionBuilder.setMediaId( genre );
         mediaDescriptionBuilder.setTitle( genre );
-        mediaDescriptionBuilder.setIconBitmap( BitmapFactory.decodeResource( getResources(), R.drawable.ic_launcher ) );
+        mediaDescriptionBuilder.setIconBitmap( BitmapFactory.decodeResource( getResources(), R.drawable.folder ) );
 
         return new MediaBrowser.MediaItem( mediaDescriptionBuilder.build(), MediaBrowser.MediaItem.FLAG_BROWSABLE );
     }
