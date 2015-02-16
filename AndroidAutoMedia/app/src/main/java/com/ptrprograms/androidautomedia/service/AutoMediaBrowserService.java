@@ -10,8 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.service.media.MediaBrowserService;
 import android.text.TextUtils;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.ptrprograms.androidautomedia.R;
 import com.ptrprograms.androidautomedia.model.Song;
@@ -134,18 +132,16 @@ public class AutoMediaBrowserService extends MediaBrowserService {
 
     @Override
     public void onLoadChildren(String parentId, Result<List<MediaBrowser.MediaItem>> result) {
-        Log.e( "Android Auto", parentId);
 
-        List<MediaBrowser.MediaItem> items = getMediaItemsById(parentId);
-        if( items == null ) {
-            Toast.makeText( getApplicationContext(), "MediaItems null, should play", Toast.LENGTH_SHORT ).show();
-        } else {
+        List<MediaBrowser.MediaItem> items = getMediaItemsById( parentId );
+        if( items != null ) {
             result.sendResult( items );
         }
+
     }
 
     private List<MediaBrowser.MediaItem> getMediaItemsById( String id ) {
-        List<MediaBrowser.MediaItem> mediaItems = new ArrayList();
+        List<MediaBrowser.MediaItem> mediaItems = new ArrayList<MediaBrowser.MediaItem>();
         if( BROWSEABLE_ROOT.equalsIgnoreCase( id ) ) {
             mediaItems.add( generateBrowseableMediaItemByGenre(BROWSEABLE_CAJUN) );
             mediaItems.add( generateBrowseableMediaItemByGenre(BROWSEABLE_JAZZ) );
