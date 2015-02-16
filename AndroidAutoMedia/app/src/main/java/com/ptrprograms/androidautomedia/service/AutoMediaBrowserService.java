@@ -3,11 +3,13 @@ package com.ptrprograms.androidautomedia.service;
 import android.graphics.BitmapFactory;
 import android.media.MediaDescription;
 import android.media.MediaMetadata;
+import android.media.MediaPlayer;
 import android.media.browse.MediaBrowser;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.service.media.MediaBrowserService;
 import android.text.TextUtils;
 
@@ -27,11 +29,14 @@ public class AutoMediaBrowserService extends MediaBrowserService {
     private static final String BROWSEABLE_ROCK = "Rock";
     private static final String BROWSEABLE_JAZZ = "Jazz";
     private static final String BROWSEABLE_CAJUN = "Cajun";
+    private static final String CURRENT_MEDIA_POSITION = "current_media_position";
 
     private MediaSession mMediaSession;
     private MediaSession.Token mMediaSessionToken;
 
     private List<Song> mSongs;
+
+    private MediaPlayer mMediaPlayer;
 
     private MediaSession.Callback mMediaSessionCallback = new MediaSession.Callback() {
         @Override
@@ -39,6 +44,7 @@ public class AutoMediaBrowserService extends MediaBrowserService {
             super.onPlay();
 
             toggleMediaPlaybackState( true );
+            playMedia( PreferenceManager.getDefaultSharedPreferences( getApplicationContext() ).getInt( CURRENT_MEDIA_POSITION, 0 ), null );
         }
 
         //This is called when the pause button is pressed, or when onPlayFromMediaId is called in
@@ -48,6 +54,7 @@ public class AutoMediaBrowserService extends MediaBrowserService {
             super.onPause();
 
             toggleMediaPlaybackState( false );
+            pauseMedia();
         }
 
         @Override
@@ -56,6 +63,7 @@ public class AutoMediaBrowserService extends MediaBrowserService {
 
             initMediaMetaData( mediaId );
             toggleMediaPlaybackState( true );
+            playMedia( 0, mediaId );
         }
 
         @Override
@@ -198,4 +206,37 @@ public class AutoMediaBrowserService extends MediaBrowserService {
         return new MediaBrowser.MediaItem( mediaDescriptionBuilder.build(), MediaBrowser.MediaItem.FLAG_PLAYABLE );
     }
 
+    private void playMedia( int position, String id ) {
+        if( mMediaPlayer != null )
+            mMediaPlayer.reset();
+
+        //Should check id to determine what to play in a real app
+        int songId = getApplicationContext().getResources().getIdentifier("geoff_ledak_dust_array_preview", "raw", getApplicationContext().getPackageName());
+        mMediaPlayer = MediaPlayer.create(getApplicationContext(), songId);
+
+        if( position > 0 )
+            mMediaPlayer.seekTo( position );
+        mMediaPlayer.start();
+
+    }
+
+    private void pauseMedia() {
+        if( mMediaPlayer != null ) {
+            mMediaPlayer.pause();
+            PreferenceManager.getDefaultSharedPreferences( this ).edit().putInt( CURRENT_MEDIA_POSITION,
+                    mMediaPlayer.getCurrentPosition() ).commit();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if( mMediaPlayer != null ) {
+            pauseMedia();
+            mMediaPlayer.release();
+            PreferenceManager.getDefaultSharedPreferences( this ).edit().putInt( CURRENT_MEDIA_POSITION,
+                    0 ).commit();
+        }
+
+    }
 }
