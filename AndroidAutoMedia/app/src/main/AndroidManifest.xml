@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".AutoMediaBrowserService">
+        <service android:name="com.ptrprograms.androidautomedia.service.AutoMediaBrowserService">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />
             </intent-filter>

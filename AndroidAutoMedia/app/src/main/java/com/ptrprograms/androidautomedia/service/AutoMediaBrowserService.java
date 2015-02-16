@@ -112,12 +112,12 @@ public class AutoMediaBrowserService extends MediaBrowserService {
         PlaybackState playbackState;
         if( playing ) {
             playbackState = new PlaybackState.Builder()
-                    .setActions(PlaybackState.ACTION_PLAY_PAUSE)
-                    .setState(PlaybackState.STATE_PLAYING, 0, 1)
+                    .setActions( PlaybackState.ACTION_PLAY_PAUSE | PlaybackState.ACTION_SKIP_TO_NEXT | PlaybackState.ACTION_SKIP_TO_PREVIOUS )
+                    .setState( PlaybackState.STATE_PLAYING, 0, 1 )
                     .build();
         } else {
             playbackState = new PlaybackState.Builder()
-                    .setActions(PlaybackState.ACTION_PLAY_PAUSE)
+                    .setActions( PlaybackState.ACTION_PLAY_PAUSE )
                     .setState(PlaybackState.STATE_PAUSED, 0, 1)
                     .build();
         }
