@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android Auto Messenger</string>
+    <string name="hello_world">Android Auto Messenger Demo - This activity generates a notification
+        for the Android Auto message console messenger</string>
+
+</resources>
