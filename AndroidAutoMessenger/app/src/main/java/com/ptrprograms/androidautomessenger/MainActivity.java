@@ -78,7 +78,6 @@ public class MainActivity extends Activity {
         NotificationCompat.CarExtender.UnreadConversation.Builder unreadConversationBuilder =
                 new NotificationCompat.CarExtender.UnreadConversation.Builder( UNREAD_CONVERSATION_BUILDER_NAME );
 
-
         unreadConversationBuilder.setReadPendingIntent( getMessageReadPendingIntent() );
         unreadConversationBuilder.setReplyAction( getMessageReplyPendingIntent(), getVoiceReplyRemoteInput() );
         unreadConversationBuilder.addMessage( "Okay I'm home now. Give me a buzz when you get in. I'll be here pretty much all night. Bye.");
