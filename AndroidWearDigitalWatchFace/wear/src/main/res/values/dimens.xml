@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="y_offset">90dp</dimen>
+    <dimen name="x_offset_square">15dp</dimen>
+    <dimen name="x_offset_round">25dp</dimen>
+    <dimen name="text_size">40dp</dimen>
+
+</resources>

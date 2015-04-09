@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/pre-dexed/release/classes-955d31f25ad49b7523533257e7ccc98677c8fb23.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/pre-dexed/release/support-annotations-21.0.3-ca7b0828ed377d9112e8a6b99294e07b295343b4.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6384c6cd674a22610b932d9464aa6938d067f285">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/pre-dexed/release/classes-cda8d28b1fa811a1f837ff665ef06c71f5d3e78a.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/exploded-aar/com.google.android.support/wearable/1.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="27f19641b81b1078e653d2f0e5d1ed44d158a785">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/pre-dexed/release/classes-9c978efe130095848d04fc1e8c6e18d164397b89.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="95482e7c792a7c0d5a9d5461e97726bd54fe9549">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/pre-dexed/release/classes-6f60097e6a64c5c1f9f4955fe4c32454b2757579.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/pre-dexed/release/classes-520765bf94511e45c29fac2c97e4368f50e2cbcf.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/pre-dexed/release/classes-aaccea57c7ea5ca576601c646db393d7798ca122.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/pre-dexed/release/classes-734ea0be390941fb5a89e233c5605bbcb7ca69d3.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/pre-dexed/release/support-annotations-21.0.0-b79f81aa79cfab2c630a69df43e0ed367e74ce1f.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/pre-dexed/release/internal_impl-21.0.3-7a9ba0df43f3a8b93304379365da603d87f9147c.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/mobile/build/intermediates/pre-dexed/release/classes-0f3d5e8b2881ae54766f3fe5046fec02811a7420.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/AndroidWearWatchFace/wear/build/intermediates/pre-dexed/release/internal_impl-21.0.0-812d6fdc3628254a66961a710832a0cf44b000fd.jar" />
+    </item>
+
+</items>
