@@ -1,15 +1,17 @@
-Tutorials for these projects can be found at http://ptrprograms.blogspot.com/
-
 AndroidDemoProjects
 ===================
 
 AndroidArduinoLEDControl: Android project and Arduino sketch file for controlling 3 different LEDs attached to an Arduino board from an Android device.
 
-AndroidAutoMedia: Demo for creating a navigation and playback architecture for Android Auto's media items
+AndroidAutoMedia: Demo for creating a navigation and playback architecture for Android Auto's media items.
+
+AndroidAutoMessenger: Uses the Android Auto API to display notifications and receive voice feedback from users.
 
 AndroidTVAsteroidBelt: Example of using OpenGL and the Android TV controller to make a basic Asteroids game. The tutorial for this demo can be found on Binpress - http://www.binpress.com/tutorial/getting-started-with-game-development-for-android-tv/149
 
 AndroidTVMediaPlayer: A demo media project for the AndroidTV.
+
+AndroidWearDigitalWatchFace: Example of using a digital watch face on an Android Wear device using the official API
 
 Animations: Example of using the new animation features in Android L. Goes over ripples, animated UI widgets, circular reveal, activity transitions and shared element activity transitions.
 
@@ -20,6 +22,8 @@ Chromecast: Demo of using Android as a Chromecast sender application for playing
 CustomDrawableStates: Implementation of custom drawable states in Android in order to extend past the standard 'pressed', 'active', etc.
 
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
+
+EventDrivenHierarchicalViews: Example of using a container view with an update method to force all children views to update.
 
 Flashlight: Can't be an Android developer without making a flashlight app, right?
 
@@ -33,6 +37,8 @@ Google Maps: Basic implementation of the Google Maps fragment that allows the us
 
 IconColorization: Goes over using Picasso to change the color of drawables programatically.
 
+JobScheduler: Demo of a simple JobScheduler from Android Lollipop to set up periodic background tasks.
+
 MediaSessionwithMediaStyleNotification: Example of using a media session with the MediaStyle notification for Android Lollipop. These notifications are used for lock screen media controls.
 
 NavigationDrawer: An example of using the navigation drawer in an activity to load fragments. Also an example of Square's Otto library for firing events from a list to the activity.
@@ -43,21 +49,23 @@ NotificationsCustomLayout: Creates a custom expanded layout for Jellybean+ that 
 
 ProductFlavorsandResources: Uses Gradle and the resource structure of Android to demonstrate creating multiple apps from the same code base.
 
-Random Kitty Muzei: Plugin for Muzei that displays a new random cat image every hour from a remote source as a device wallpaper.
+RandomKittyMuzei: Plugin for Muzei that displays a new random cat image every hour from a remote source as a device wallpaper.
 
-Sensor List: Gathers a list of all hardware sensors available on the device, and displays the values that they produce in real time.
+SensorList: Gathers a list of all hardware sensors available on the device, and displays the values that they produce in real time.
 
 SilenceRingerWidget: Sample code for building a widget that silences the phone (including on Lollipop) with one button press.
 
 StaggeredGridView: Sample app using Etsy's StaggeredGridView library - https://github.com/etsy/AndroidStaggeredGrid
 
-Stay Awake: Using the official Android Wear SDK that came out a couple days ago, I wrote an app that lets users select a time interval that vibrates the Wear on their wrist whenever the timer ends, then repeats. The goal is to help keep drivers alert on long drives.
+StayAwake: Using the official Android Wear SDK that came out a couple days ago, I wrote an app that lets users select a time interval that vibrates the Wear on their wrist whenever the timer ends, then repeats. The goal is to help keep drivers alert on long drives.
 
-Street View: Implements the new Google Street View feature.
+StreetView: Implements the new Google Street View feature.
 
-Video Player: Native video player for playing remote content.
+VideoPlayer: Native video player for playing remote content.
 
-WearCustomWatchFace: Creates a custom watch face for the Android Wear with a settings activity. Uses an undocumented API, but I'll have a sample up when an official API is available.
+WearFaceWithOptions: Example of using the official Wear watchface API to make an analog watch face with a selection screen to change properties of the displayed face via the DataLayer API
+
+WearCustomWatchFace: DEPRECATED: Left for archival purposes. Creates a custom watch face for the Android Wear with a settings activity. Uses an undocumented and no longer supported API. Please see WearFaceWithOptions for how to do this properly.
 
 WearDevelopersPreviewNotifications: Examples of possible notifications using the Google Wear developer preview.
 
