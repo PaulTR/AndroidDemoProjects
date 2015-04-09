@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="background_resource_ids">
+        <item>@drawable/watch_face_all</item>
+        <item>@drawable/watch_face_aksumite</item>
+        <item>@drawable/watch_face_cahokian</item>
+        <item>@drawable/watch_face_donghu</item>
+        <item>@drawable/watch_face_harrapan</item>
+        <item>@drawable/watch_face_koori</item>
+        <item>@drawable/watch_face_latene</item>
+        <item>@drawable/watch_face_minoan</item>
+        <item>@drawable/watch_face_mu</item>
+        <item>@drawable/watch_face_nabatean</item>
+        <item>@drawable/watch_face_olmec</item>
+        <item>@drawable/watch_face_shang</item>
+        <item>@drawable/watch_face_sumerian</item>
+    </integer-array>
+</resources>

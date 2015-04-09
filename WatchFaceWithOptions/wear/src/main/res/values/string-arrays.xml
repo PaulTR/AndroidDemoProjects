@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="background_array">
+        <item>Endgame</item>
+        <item>Aksumite</item>
+        <item>Cahokian</item>
+        <item>Donghu</item>
+        <item>Harrapan</item>
+        <item>Koori</item>
+        <item>Latene</item>
+        <item>Minoan</item>
+        <item>Mu</item>
+        <item>Nabatean</item>
+        <item>Olmec</item>
+        <item>Shang</item>
+        <item>Sumerian</item>
+    </string-array>
+
+    <string-array name="background_icons_resource_ids">
+        <item>@drawable/ic_endgame</item>
+        <item>@drawable/ic_aksumite</item>
+        <item>@drawable/ic_cahokian</item>
+        <item>@drawable/ic_donghu</item>
+        <item>@drawable/ic_harrapan</item>
+        <item>@drawable/ic_koori</item>
+        <item>@drawable/ic_latene</item>
+        <item>@drawable/ic_minoan</item>
+        <item>@drawable/ic_mu</item>
+        <item>@drawable/ic_nabatean</item>
+        <item>@drawable/ic_olmec</item>
+        <item>@drawable/ic_shang</item>
+        <item>@drawable/ic_sumerian</item>
+    </string-array>
+</resources>
