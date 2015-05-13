@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-2dcc9d94506c880157d62c482b5a4b2c037228c2.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-d654880856c858764ba73769fc977cd8beb6eb8b.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-1b91ead817c8e43fc038f7a8929ca132d7ae6fb8.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-6de59b5755081a8a0be4c4ed9fc4789c6c9e4639.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-32af43a84fd2f731ec3f850f8a3c009d13201fe2.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-67d3f9878e0b773059c17917f5418ee94fe48f2f.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-e683da20368283fb053e40949483f0ae8b1f3f80.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-e5f489a76c46e5c95e0b18d82140fd484148ed0d.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-6f5ceeeb7e9770a06c885785809b21d3ce944e6c.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-7053582b603c6db9a00ab37ea85b09d5ddf5651e.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-6287095aff236515b6ca847e4658b0bd90cbfc90.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-cd609428f41e11a930fcc2bfd725d75f8f0f1113.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-7f5e5808b89e2583dca8dfe15d8ad98125fd5ca7.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-789899aa843a378e042fb9785a4a6cc5a6864716.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-c437fa56bdd87ec2344ed0ca55dc3539658ed3ca.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-a3b0deeeb7eca48d7c16e21fd270e7d43270a56e.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-3a07970dfa760894e3045089a66c8f9bed2c1ebf.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-225779b7bf4acb7bc44e10d09031afc8cff6bafd.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-e6ef60505121cf6e949f91256bf8de6061bba56a.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-78e69efefa7f0943de629201cbac4e1350cc294d.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-b6c002dea67052486503234649570078f82a9d02.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-8896e5cbcc39817383feddab2c3eb8f0384fb225.jar" />
+    </item>
+    <item
+        jar="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/paulruiz/Documents/TutsPlusArticles/PlacesAPI/PlacesAPI/app/build/intermediates/pre-dexed/debug/classes-5d02518924c20a9c3475ee40ec272c9f5671882e.jar" />
+    </item>
+
+</items>

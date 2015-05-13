@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="64dp"
+    android:width="64dp"
+    android:viewportHeight="600"
+    android:viewportWidth="600" >
+
+    <path
+        android:name="left_arrow"
+        android:fillColor="#000000"
+        android:pathData="@string/left_arrow"/>
+</vector>
