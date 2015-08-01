@@ -1,0 +1,54 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/union_station" />
+
+        <TextView
+            android:id="@+id/vibrant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vibrant"/>
+
+        <TextView
+            android:id="@+id/light_vibrant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Light Vibrant"/>
+
+        <TextView
+            android:id="@+id/dark_vibrant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dark Vibrant"/>
+
+        <TextView
+            android:id="@+id/muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Muted" />
+
+        <TextView
+            android:id="@+id/light_muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Light Muted" />
+
+        <TextView
+            android:id="@+id/dark_muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dark Muted" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp" />
+</LinearLayout>
