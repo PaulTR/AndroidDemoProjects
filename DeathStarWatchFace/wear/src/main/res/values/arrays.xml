@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="hourHandIds">
+        <item>@drawable/saber_hand</item>
+        <item>@drawable/saber_hand_ambient</item>
+    </array>
+
+    <array name="minuteHandIds">
+        <item>@drawable/minute_hand</item>
+        <item>@drawable/minute_hand_ambient</item>
+    </array>
+
+    <array name="secondHandIds">
+        <item>@drawable/second_hand</item>
+        <item>@drawable/second_hand_ambient</item>
+    </array>
+</resources>

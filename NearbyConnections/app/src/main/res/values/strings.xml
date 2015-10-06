@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NearbyMessages</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="connection_type_host">Host</string>
+    <string name="connection_type_client">Client</string>
+
+    <string name="service_id">tutsplus_service_id</string>
+</resources>

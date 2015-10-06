@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="connection_types">
+        <item>@string/connection_type_host</item>
+        <item>@string/connection_type_client</item>
+    </array>
+</resources>

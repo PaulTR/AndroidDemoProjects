@@ -23,6 +23,8 @@ CustomDrawableStates: Implementation of custom drawable states in Android in ord
 
 Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
 
+Death Star Watch Face: Custom watch face using images as the watch face hands.
+
 EventDrivenHierarchicalViews: Example of using a container view with an update method to force all children views to update.
 
 Flashlight: Can't be an Android developer without making a flashlight app, right?
@@ -33,7 +35,13 @@ Gallery: Displays a grid of thumbnails that can be clicked to show a larger vers
 
 GeoFencing: Demo of creating a geofence and posting a notification whenever a user enters or exits the area.
 
-Google Maps: Basic implementation of the Google Maps fragment that allows the user to place markers and display street addresses.
+Google Maps: (Older, left for an article) Basic implementation of the Google Maps fragment that allows the user to place markers and display street addresses.
+
+GoogleMapsForAndroidPt1: Implement location services, map overlays, drawing on the map, adding custom and standard markers
+
+GoogleMapsForAndroidPt2: Override indoor level selectors, add views over map fragment, add street view
+
+GoogleMapsForAndroidPt3: Use Google Maps Utils library to add heat maps, marker clustering and spherical utils.
 
 IconColorization: Goes over using Picasso to change the color of drawables programatically.
 
@@ -42,6 +50,8 @@ JobScheduler: Demo of a simple JobScheduler from Android Lollipop to set up peri
 MediaSessionwithMediaStyleNotification: Example of using a media session with the MediaStyle notification for Android Lollipop. These notifications are used for lock screen media controls.
 
 NavigationDrawer: An example of using the navigation drawer in an activity to load fragments. Also an example of Square's Otto library for firing events from a list to the activity.
+
+Nearby Connections: Implementation of the nearby connections API to communicate across a LAN between Android devices.
 
 Notifications: Demo of different options available in a standard notification from the Android OS.
 

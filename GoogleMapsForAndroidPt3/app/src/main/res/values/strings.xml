@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MapsDemo</string>
+
+    <string name="action_distance">Distance</string>
+    <string name="action_heading">Heading</string>
+
+    <string name="item_clustering">Clustering</string>
+    <string name="item_heat_map">Heat Map</string>
+    <string name="item_polylines">Polyline Decoding</string>
+    <string name="item_spherical_geometry">Spherical Geometry Utils</string>
+
+    <string name="google_api_key">AIzaSyA5F3MRWD3C9nn30-0wGrLOdGUU7soXzWE</string>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_items">
+        <item>@string/item_clustering</item>
+        <item>@string/item_heat_map</item>
+        <item>@string/item_polylines</item>
+        <item>@string/item_spherical_geometry</item>
+    </string-array>
+</resources>

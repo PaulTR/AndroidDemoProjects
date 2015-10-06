@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/action_clear" android:title="@string/action_clear"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_circle" android:title="@string/action_circle"
+        android:orderInCategory="200" app:showAsAction="never" />
+    <item android:id="@+id/action_polygon" android:title="@string/action_polygon"
+        android:orderInCategory="300" app:showAsAction="never" />
+    <item android:id="@+id/action_overlay" android:title="@string/action_overlay"
+        android:orderInCategory="400" app:showAsAction="never" />
+    <item android:id="@+id/action_traffic" android:title="@string/action_traffic"
+        android:orderInCategory="500" app:showAsAction="never" />
+    <item android:id="@+id/action_cycle_map_type" android:title="@string/action_cycle_map_type"
+        android:orderInCategory="600" app:showAsAction="never" />
+</menu>
