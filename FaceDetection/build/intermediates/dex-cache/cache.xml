@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/pre-dexed/debug/classes-17efc2e822cb645463f1187d4f07f1379992a4b1.jar" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/pre-dexed/debug/classes-2d2eeb9d89823290fbfe7addc2a85594fa8f64a8.jar" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/pre-dexed/debug/classes-0efccfa8e3875d25e2188fcac927f6a4d0dc940d.jar" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="17449c47df35c754b257532052f1270c444f7993">
+        <dex dex="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/pre-dexed/debug/classes-4e3e05b87fb3ea87a9e42098e3c09fe4b9206162.jar" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/pre-dexed/debug/classes-395fa7ceea21c9e3dd729c4b478b7feafb4abcd0.jar" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-cdfa3143a868b605c16a85e5942ea66bfbce20eb.jar" />
+    </item>
+    <item
+        jar="/Users/Paul/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/Users/Paul/Documents/AndroidTmp/FaceDetection/FaceDetection/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-b534fd2f9071d4c6b7d5c594466905a706afadcd.jar" />
+    </item>
+
+</items>
