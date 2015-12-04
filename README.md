@@ -7,6 +7,8 @@ AndroidAutoMedia: Demo for creating a navigation and playback architecture for A
 
 AndroidAutoMessenger: Uses the Android Auto API to display notifications and receive voice feedback from users.
 
+AndroidPermissionsDemo: Demo for the Android Marshmallow permissions model and how to request/check permissions.
+
 AndroidTVAsteroidBelt: Example of using OpenGL and the Android TV controller to make a basic Asteroids game. The tutorial for this demo can be found on Binpress - http://www.binpress.com/tutorial/getting-started-with-game-development-for-android-tv/149
 
 AndroidTVMediaPlayer: A demo media project for the AndroidTV.
@@ -17,6 +19,8 @@ Animations: Example of using the new animation features in Android L. Goes over 
 
 AppCompatToolbar: Demo of implementing the Toolbar from the AppCompat support library as a replacement for the standard built in actionbar.
 
+BLEAdvertising: Demo of advertising over Bluetooth LE and finding devices that are advertising with a specified service UUID
+
 Chromecast: Demo of using Android as a Chromecast sender application for playing an online resource on a television.
 
 CustomDrawableStates: Implementation of custom drawable states in Android in order to extend past the standard 'pressed', 'active', etc.
@@ -26,6 +30,8 @@ Daydream: Utilizes the Daydream Android service to display quotes pulled from a 
 Death Star Watch Face: Custom watch face using images as the watch face hands.
 
 EventDrivenHierarchicalViews: Example of using a container view with an update method to force all children views to update.
+
+Face Detection: Sample using the Face Detection API from Play Services. Goes over detecting faces and landmarks on a still image for drawing over a picture.
 
 Flashlight: Can't be an Android developer without making a flashlight app, right?
 
