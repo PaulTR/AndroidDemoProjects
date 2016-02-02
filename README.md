@@ -1,6 +1,8 @@
 AndroidDemoProjects
 ===================
 
+ActivityRecognition: Example of using Google Play Services to recognize a user's activity, such as running, walking, or riding a bicycle.
+
 AndroidArduinoLEDControl: Android project and Arduino sketch file for controlling 3 different LEDs attached to an Arduino board from an Android device.
 
 AndroidAutoMedia: Demo for creating a navigation and playback architecture for Android Auto's media items.
@@ -40,6 +42,8 @@ FordAppLinkAudio: Uses Sync AppLink to play a live online audio stream through F
 Gallery: Displays a grid of thumbnails that can be clicked to show a larger version of an image. Also allows the larger detailed version of the image to be swiped in order to show additional images in the gallery.
 
 GeoFencing: Demo of creating a geofence and posting a notification whenever a user enters or exits the area.
+
+Google Fit Sensors API: Example of using Google Play Services to access Google Fit sensor data and keep track of the user's step count.
 
 Google Maps: (Older, left for an article) Basic implementation of the Google Maps fragment that allows the user to place markers and display street addresses.
 
