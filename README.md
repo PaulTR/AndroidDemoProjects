@@ -94,7 +94,7 @@ WearMessageApi: Demonstration of communication between a smartphone and Android 
 ------------------------------------------------------------------------------------------------
 
 License
-Copyright 2014-2015 Paul Trebilcox-Ruiz
+Copyright 2014-2016 Paul Trebilcox-Ruiz
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
