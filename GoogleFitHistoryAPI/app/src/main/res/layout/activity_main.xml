@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_view_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View this weeks steps" />
+
+    <Button
+        android:id="@+id/btn_view_today"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View today's steps"/>
+
+    <Button
+        android:id="@+id/btn_add_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add step data for today" />
+
+    <Button
+        android:id="@+id/btn_update_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update step data for yesterday" />
+
+    <Button
+        android:id="@+id/btn_delete_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete step data for yesterday" />
+
+</LinearLayout>

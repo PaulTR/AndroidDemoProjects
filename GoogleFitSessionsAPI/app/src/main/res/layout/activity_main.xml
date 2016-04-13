@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_start_session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start a Session" />
+
+    <Button
+        android:id="@+id/btn_stop_session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop a Session" />
+
+    <Button
+        android:id="@+id/btn_insert_segment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert an Activity Segment " />
+
+    <Button
+        android:id="@+id/btn_read_session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read Sessions" />
+
+    <Button
+        android:id="@+id/btn_delete_session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Sessions"/>
+
+
+</LinearLayout>
