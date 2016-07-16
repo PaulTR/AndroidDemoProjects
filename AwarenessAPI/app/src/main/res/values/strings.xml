@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Awareness API</string>
+    <string name="google_play_services_key">YOUR API KEY HERE</string>
+
+    <string name="item_snapshot_headphones">Snapshot: Headphone State</string>
+    <string name="item_snapshot_location">Snapshot: Location</string>
+    <string name="item_snapshot_places">Snapshot: Places</string>
+    <string name="item_snapshot_weather">Snapshot: Weather</string>
+    <string name="item_snapshot_activity">Snapshot: Activity</string>
+    <string name="item_snapshot_beacons">Snapshot: Beacons</string>
+    <string name="item_fence">Fence</string>
+</resources>

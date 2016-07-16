@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="items">
+        <item>@string/item_snapshot_activity</item>
+        <item>@string/item_snapshot_headphones</item>
+        <item>@string/item_snapshot_location</item>
+        <item>@string/item_snapshot_places</item>
+        <item>@string/item_snapshot_weather</item>
+        <item>@string/item_snapshot_beacons</item>
+        <item>@string/item_fence</item>
+    </array>
+</resources>
