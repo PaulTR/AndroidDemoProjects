@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/paultr/Documents/androidtmp/tensorflow/android/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c8b822bb62da1a01bceef64e9e42e3839e6ec6d0">
+        <dex dex="/Users/paultr/Documents/androidtmp/tensorflow/android/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d31fad83d5258cf2d938691be99f72132fcc15d0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/paultr/Documents/androidtmp/tensorflow/android/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="bed54800d463ce0f9967a2be0cf3a1a0fd4b1d27">
+        <dex dex="/Users/paultr/Documents/androidtmp/tensorflow/android/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_86f2df72b4eca919a24d9ef13c52bb9083a419c3/classes.dex" />
+    </item>
+
+</items>
