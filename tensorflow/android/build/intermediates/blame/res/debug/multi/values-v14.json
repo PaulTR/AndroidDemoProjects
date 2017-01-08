@@ -1,0 +1,28 @@
+[
+    {
+        "outputFile": "/Users/paultr/Documents/androidtmp/tensorflow/android/build/intermediates/res/merged/debug/values-v14/values-v14.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 10,
+                    "endOffset": 195
+                },
+                "from": {
+                    "file": "/Users/paultr/Documents/androidtmp/tensorflow/android/src/main/res/values-v14/styles.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 2,
+                        "startOffset": 214,
+                        "endLine": 9,
+                        "endColumn": 10,
+                        "endOffset": 354
+                    }
+                }
+            }
+        ]
+    }
+]

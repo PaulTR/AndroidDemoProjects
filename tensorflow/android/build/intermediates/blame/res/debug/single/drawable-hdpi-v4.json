@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/paultr/Documents/androidtmp/tensorflow/android/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_info.png",
+        "source": "/Users/paultr/Documents/androidtmp/tensorflow/android/src/main/res/drawable-hdpi/ic_action_info.png"
+    },
+    {
+        "merged": "/Users/paultr/Documents/androidtmp/tensorflow/android/build/intermediates/res/merged/debug/drawable-hdpi-v4/tile.9.png",
+        "source": "/Users/paultr/Documents/androidtmp/tensorflow/android/src/main/res/drawable-hdpi/tile.9.png"
+    },
+    {
+        "merged": "/Users/paultr/Documents/androidtmp/tensorflow/android/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/Users/paultr/Documents/androidtmp/tensorflow/android/src/main/res/drawable-hdpi/ic_launcher.png"
+    }
+]
