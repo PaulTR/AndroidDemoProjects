@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GoogleCastV3</string>
+
+    <string name="cast_app_id"></string>
+
+    <string name="movie_link">https://ia800300.us.archive.org/1/items/night_of_the_living_dead/night_of_the_living_dead_512kb.mp4</string>
+    <string name="movie_poster">https://upload.wikimedia.org/wikipedia/commons/2/2e/Night_of_the_Living_Dead_%281968%29_theatrical_poster.jpg</string>
+</resources>
