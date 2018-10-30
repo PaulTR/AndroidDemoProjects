@@ -21,19 +21,7 @@ Animations: Example of using the new animation features in Android L. Goes over 
 
 AppCompatToolbar: Demo of implementing the Toolbar from the AppCompat support library as a replacement for the standard built in actionbar.
 
-BLEAdvertising: Demo of advertising over Bluetooth LE and finding devices that are advertising with a specified service UUID
 
-Chromecast: Demo of using Android as a Chromecast sender application for playing an online resource on a television.
-
-CustomDrawableStates: Implementation of custom drawable states in Android in order to extend past the standard 'pressed', 'active', etc.
-
-Daydream: Utilizes the Daydream Android service to display quotes pulled from a server.
-
-Death Star Watch Face: Custom watch face using images as the watch face hands.
-
-EventDrivenHierarchicalViews: Example of using a container view with an update method to force all children views to update.
-
-Face Detection: Sample using the Face Detection API from Play Services. Goes over detecting faces and landmarks on a still image for drawing over a picture.
 
 Flashlight: Can't be an Android developer without making a flashlight app, right?
 
