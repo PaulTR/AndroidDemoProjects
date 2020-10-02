@@ -91,6 +91,8 @@ WearDevelopersPreviewNotifications: Examples of possible notifications using the
 
 WearMessageApi: Demonstration of communication between a smartphone and Android Wear device through the Wearable Message API. Article describing the demo can be found at www.binpress.com/tutorials
 
+Tic Tac Toe - Famous game of tic tac toe built on native android.
+
 ------------------------------------------------------------------------------------------------
 
 License
