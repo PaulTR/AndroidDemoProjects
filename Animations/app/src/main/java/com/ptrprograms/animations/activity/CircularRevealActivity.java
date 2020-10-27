@@ -51,6 +51,7 @@ public class CircularRevealActivity extends Activity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
+                Toast.makeText(getApplicationContext(),"Image gone Invisible!",Toast.LENGTH_SHORT).show();
                 mImageView.setVisibility( View.INVISIBLE );
             }
         });
