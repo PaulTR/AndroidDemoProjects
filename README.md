@@ -1,3 +1,6 @@
+This is very, very outdated :) Haven't really touched this repo in 7ish years. Might come back and redo some of it someday from scratch, but probably not.
+
+
 AndroidDemoProjects
 ===================
 
