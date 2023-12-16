@@ -1,4 +1,4 @@
-This is very, very outdated :) Haven't really touched this repo in 7ish years. Might come back and redo some of it someday from scratch, but probably not.
+This is an old portfolio of projects from some articles I wrote years ago. None of this code is maintained or guaranteed to work anymore.
 
 
 AndroidDemoProjects
